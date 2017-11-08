@@ -21,7 +21,7 @@ namespace CustomerManager
             /*
              1. Connect to any database
              2. Create db basic schema
-
+             3. Create connector
             */
             int test = 12;
             Application.Run(new MainWindow());
