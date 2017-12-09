@@ -21,5 +21,12 @@ namespace CustomerManager
         {
 
         }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+ 
     }
 }
