@@ -37,10 +37,11 @@ namespace CustomerManager
 
             connection.getMessage();
 
+            // Read db source from config file
             String configDBSource = ConfigurationManager.AppSettings["dbSource"];
 
             SQLiteConnection dbh;
-
+            // Check if the database exits
             bool db_exist = connection.databaseExist(configDBSource);
 
             if( db_exist)
@@ -50,29 +51,29 @@ namespace CustomerManager
             }
             else
             {
-                System.Console.WriteLine(log_prefix + "<<<<<<<<<<<<<<<<<<<<<File does not exist. Initializing default database>>>>>>>>>>>>>>>>>>>>");
-                // call create method
+                System.Console.WriteLine(log_prefix + "Database file does not exist. Initializing default database");
+                
+                // call create method from database manager and return the db handler
                 DatabaseManager new_db = new DatabaseManager();
                 dbh = new_db.createDatabase(configDBSource);
 
-                //dbh = connection.getDBConn(defaultDataBase);
             }
 
-
+            // after here is only for testing
             dbh.Open();
             String sql = "select * from customers";
             SQLiteCommand command = new SQLiteCommand(sql, dbh);
 
             SQLiteDataReader reader = command.ExecuteReader();
             while (reader.Read())
-                Console.WriteLine("first_name: " + reader["first_name"] + "\tlast_name: " + reader["last_name"]);
+                Console.WriteLine("id: " + reader["id"] + "\tfirst_name: " + reader["first_name"] + "\tlast_name: " + reader["last_name"]);
 
             dbh.Close();
 
             Customer customer = new Customer();
-            customer.First_Name = "Jesus";
+            customer.First_Name = "Joe";
             System.Console.WriteLine("<<<<<<<<<<<<<<<<<<<<< first name >>>>>>>>>>>>>>>>>>>>: " + customer.First_Name);
-            customer.Email = "jesus.ochoa@gmail.com";
+            customer.Email = "test@gmail.com";
             System.Console.WriteLine("<<<<<<<<<<<<<<<<<<<<< email >>>>>>>>>>>>>>>>>>>>: " + customer.Email);
 
             // Open the main window

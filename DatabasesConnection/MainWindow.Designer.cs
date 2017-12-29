@@ -151,6 +151,7 @@
             // btnToReady
             // 
             this.btnToReady.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnToReady.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnToReady.Location = new System.Drawing.Point(2260, 999);
             this.btnToReady.Name = "btnToReady";
             this.btnToReady.Size = new System.Drawing.Size(511, 108);
@@ -161,6 +162,7 @@
             // btnToInProgress
             // 
             this.btnToInProgress.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnToInProgress.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnToInProgress.Location = new System.Drawing.Point(2260, 1456);
             this.btnToInProgress.Name = "btnToInProgress";
             this.btnToInProgress.Size = new System.Drawing.Size(511, 108);
@@ -171,6 +173,7 @@
             // btnMoveToInProcess
             // 
             this.btnMoveToInProcess.BackColor = System.Drawing.Color.Orange;
+            this.btnMoveToInProcess.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnMoveToInProcess.Location = new System.Drawing.Point(2260, 831);
             this.btnMoveToInProcess.Name = "btnMoveToInProcess";
             this.btnMoveToInProcess.Size = new System.Drawing.Size(511, 108);
@@ -181,6 +184,7 @@
             // btnCancel2
             // 
             this.btnCancel2.BackColor = System.Drawing.Color.Crimson;
+            this.btnCancel2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancel2.Location = new System.Drawing.Point(2260, 1147);
             this.btnCancel2.Name = "btnCancel2";
             this.btnCancel2.Size = new System.Drawing.Size(511, 108);
@@ -191,6 +195,7 @@
             // btnMoveToStandingBy
             // 
             this.btnMoveToStandingBy.BackColor = System.Drawing.Color.Orange;
+            this.btnMoveToStandingBy.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnMoveToStandingBy.Location = new System.Drawing.Point(2260, 1298);
             this.btnMoveToStandingBy.Name = "btnMoveToStandingBy";
             this.btnMoveToStandingBy.Size = new System.Drawing.Size(511, 108);
@@ -201,6 +206,7 @@
             // btnCancel3
             // 
             this.btnCancel3.BackColor = System.Drawing.Color.Crimson;
+            this.btnCancel3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancel3.Location = new System.Drawing.Point(2260, 1609);
             this.btnCancel3.Name = "btnCancel3";
             this.btnCancel3.Size = new System.Drawing.Size(511, 108);
@@ -224,9 +230,9 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(50, 960);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(229, 32);
+            this.label2.Size = new System.Drawing.Size(232, 32);
             this.label2.TabIndex = 17;
-            this.label2.Text = "In progress State";
+            this.label2.Text = "In Progress State";
             // 
             // label3
             // 
