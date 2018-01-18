@@ -68,7 +68,13 @@ namespace CustomerManager
             while (reader.Read())
                 Console.WriteLine("id: " + reader["id"] + "\tfirst_name: " + reader["first_name"] + "\tlast_name: " + reader["last_name"]);
 
-            dbh.Close();
+            sql = "select * from service";
+            command = new SQLiteCommand(sql, dbh);
+            reader = command.ExecuteReader();
+            while (reader.Read())
+                Console.WriteLine("id: " + reader["id"] + "\tdescription: " + reader["description"] + "\tdate_in: " + reader["date_in"]);
+
+            //dbh.Close();
 
             Customer customer = new Customer();
             customer.First_Name = "Joe";
