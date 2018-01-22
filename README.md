@@ -21,7 +21,7 @@ It is a GUI program that manages, stores, create billing statements in order to 
 
 ## Screenshots
 
-[Queue Page] (DatabasesConnection/Resources/queue_page.PNG)
+[Queue Page](DatabasesConnection/Resources/queue_page.PNG)
 
 ## Project Status
 
