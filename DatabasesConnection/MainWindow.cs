@@ -92,5 +92,7 @@ namespace CustomerManager
                 lblBackgroundColor.ForeColor = colorDialog1.Color;
 
         }
+
+
     }
 }
