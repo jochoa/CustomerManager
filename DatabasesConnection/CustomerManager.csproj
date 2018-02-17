@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configurable.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="DatabaseManager.cs" />
     <Compile Include="DBConn.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services.cs" />
+    <Compile Include="WBDocument.cs" />
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -117,6 +119,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\green_btn.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red_btn.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yellow_btn.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

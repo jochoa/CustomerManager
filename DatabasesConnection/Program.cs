@@ -82,6 +82,8 @@ namespace CustomerManager
             customer.Email = "test@gmail.com";
             System.Console.WriteLine("<<<<<<<<<<<<<<<<<<<<< email >>>>>>>>>>>>>>>>>>>>: " + customer.Email);
 
+            dbh.Close();
+
             // Open the main window
             Application.Run(new MainWindow());
 
