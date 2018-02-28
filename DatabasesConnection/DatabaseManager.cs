@@ -251,8 +251,59 @@ namespace DatabasesConnection
 
             command.ExecuteNonQuery();
         }
+        //TODO: test and activate
+        private void createSettingsTable(SQLiteConnection dbh)
+        {
+            string sql = "CREATE TABLE settings (" +
+               "id INTEGER PRIMARY KEY, " +
+               "name TEXT, " +
+               "value TEXT )";
 
-        private void createIdsTable(SQLiteConnection dbh)
+            SQLiteCommand command = new SQLiteCommand(sql, dbh);
+
+            command.ExecuteNonQuery();
+        }
+        // TODO test and activate
+        public void initializeTableSettings(SQLiteConnection dbh)
+        {
+            // create two arrays of name/values for the initialization of the settigs
+            string[] names = new string[]
+            {   "txtStandbyWarning",
+                "txtStandbyCritical",
+                "txtInProgressWarning",
+                "txtInProgressWarning",
+                "txtReadyWarning",
+                "txtReadyWarning",
+                "cbReady",
+                "cbInProgress",
+                "cbStandby",
+                "cbDisableAllThresholds"
+            };
+
+            string wng = Constants.WARNING;
+            string ctl = Constants.CRITICAL;
+            string[] values = new string[]
+            {
+                wng, ctl, wng, ctl, wng, ctl,
+                Constants.ENABLED, Constants.ENABLED, Constants.ENABLED, Constants.DISABLED
+            };
+
+            for ( int i=0; i < names.Length; i++ )
+            {
+                // Create an array of hash tables
+                Hashtable dbElements = new Hashtable();
+
+                dbElements.Add("name", names[i] );
+                dbElements.Add("value", values[i] );
+
+                String tblName = "settings";
+
+                doSQL(dbh, dbElements, tblName);
+            }
+        
+        }
+
+            private void createIdsTable(SQLiteConnection dbh)
         {
             string sql = "CREATE TABLE ids ( " +
                 "table_name TEXT, " +
@@ -307,6 +358,32 @@ namespace DatabasesConnection
         public string generateID()
         {
             return Guid.NewGuid().ToString("N");
+        }
+
+        public void readSettingsTable()
+        {
+
+            string columns = "*";
+            string from = "settings";
+
+            SQLiteDataReader reader = selectStatement(columns, from, null);
+        }
+
+        public SQLiteDataReader selectStatement(String columns, String from, String where)
+        {
+            String sql = "SELECT " + columns + " FROM " + from;
+
+            if( where != null )
+            {
+                sql += " WHERE " + where;
+            }
+            
+
+            SQLiteCommand command = new SQLiteCommand(sql, dbh1);
+
+            SQLiteDataReader reader = command.ExecuteReader();
+
+            return reader;
         }
     }
 }

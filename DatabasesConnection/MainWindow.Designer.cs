@@ -44,6 +44,9 @@
             this.btnCompleted = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.pBReady = new System.Windows.Forms.PictureBox();
+            this.pBInProgress = new System.Windows.Forms.PictureBox();
+            this.pBStandby = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnDownToInProcess = new System.Windows.Forms.Button();
@@ -151,6 +154,16 @@
             this.lvDatabase = new System.Windows.Forms.ListView();
             this.btnPrint = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.txtStandbyCritical = new System.Windows.Forms.TextBox();
+            this.txtStandbyWarning = new System.Windows.Forms.TextBox();
+            this.txtInProgressCritical = new System.Windows.Forms.TextBox();
+            this.txtReadyCritical = new System.Windows.Forms.TextBox();
+            this.txtInProgressWarning = new System.Windows.Forms.TextBox();
+            this.txtReadyWarning = new System.Windows.Forms.TextBox();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.button15 = new System.Windows.Forms.Button();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label41 = new System.Windows.Forms.Label();
@@ -172,8 +185,15 @@
             this.label35 = new System.Windows.Forms.Label();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cbReady = new System.Windows.Forms.CheckBox();
+            this.cbInProgress = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.cbDisableAllThresholds = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBReady)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBInProgress)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBStandby)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage1.SuspendLayout();
@@ -187,6 +207,7 @@
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.groupBox11.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -336,6 +357,9 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.tabPage2.Controls.Add(this.pBReady);
+            this.tabPage2.Controls.Add(this.pBInProgress);
+            this.tabPage2.Controls.Add(this.pBStandby);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.listViewStandby);
             this.tabPage2.Controls.Add(this.label3);
@@ -361,6 +385,36 @@
             this.tabPage2.Size = new System.Drawing.Size(1072, 774);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Queues";
+            // 
+            // pBReady
+            // 
+            this.pBReady.Image = global::DatabasesConnection.Properties.Resources.green_btn;
+            this.pBReady.Location = new System.Drawing.Point(940, 225);
+            this.pBReady.Name = "pBReady";
+            this.pBReady.Size = new System.Drawing.Size(77, 72);
+            this.pBReady.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBReady.TabIndex = 28;
+            this.pBReady.TabStop = false;
+            // 
+            // pBInProgress
+            // 
+            this.pBInProgress.Image = global::DatabasesConnection.Properties.Resources.green_btn;
+            this.pBInProgress.Location = new System.Drawing.Point(940, 424);
+            this.pBInProgress.Name = "pBInProgress";
+            this.pBInProgress.Size = new System.Drawing.Size(77, 72);
+            this.pBInProgress.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBInProgress.TabIndex = 27;
+            this.pBInProgress.TabStop = false;
+            // 
+            // pBStandby
+            // 
+            this.pBStandby.Image = global::DatabasesConnection.Properties.Resources.green_btn;
+            this.pBStandby.Location = new System.Drawing.Point(940, 622);
+            this.pBStandby.Name = "pBStandby";
+            this.pBStandby.Size = new System.Drawing.Size(77, 72);
+            this.pBStandby.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBStandby.TabIndex = 26;
+            this.pBStandby.TabStop = false;
             // 
             // label5
             // 
@@ -1533,6 +1587,7 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.tabPage4.Controls.Add(this.groupBox11);
             this.tabPage4.Controls.Add(this.groupBox9);
             this.tabPage4.Controls.Add(this.groupBox8);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
@@ -1541,6 +1596,114 @@
             this.tabPage4.Size = new System.Drawing.Size(1072, 774);
             this.tabPage4.TabIndex = 4;
             this.tabPage4.Text = "Control Panel";
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.cbDisableAllThresholds);
+            this.groupBox11.Controls.Add(this.checkBox2);
+            this.groupBox11.Controls.Add(this.cbInProgress);
+            this.groupBox11.Controls.Add(this.cbReady);
+            this.groupBox11.Controls.Add(this.txtStandbyCritical);
+            this.groupBox11.Controls.Add(this.txtStandbyWarning);
+            this.groupBox11.Controls.Add(this.txtInProgressCritical);
+            this.groupBox11.Controls.Add(this.txtReadyCritical);
+            this.groupBox11.Controls.Add(this.txtInProgressWarning);
+            this.groupBox11.Controls.Add(this.txtReadyWarning);
+            this.groupBox11.Controls.Add(this.label49);
+            this.groupBox11.Controls.Add(this.label48);
+            this.groupBox11.Controls.Add(this.button15);
+            this.groupBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox11.Location = new System.Drawing.Point(541, 284);
+            this.groupBox11.Margin = new System.Windows.Forms.Padding(1);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Padding = new System.Windows.Forms.Padding(1);
+            this.groupBox11.Size = new System.Drawing.Size(496, 204);
+            this.groupBox11.TabIndex = 11;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Queues Threshold configuration";
+            // 
+            // txtStandbyCritical
+            // 
+            this.txtStandbyCritical.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStandbyCritical.Location = new System.Drawing.Point(239, 168);
+            this.txtStandbyCritical.Margin = new System.Windows.Forms.Padding(1);
+            this.txtStandbyCritical.Name = "txtStandbyCritical";
+            this.txtStandbyCritical.Size = new System.Drawing.Size(42, 22);
+            this.txtStandbyCritical.TabIndex = 17;
+            // 
+            // txtStandbyWarning
+            // 
+            this.txtStandbyWarning.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStandbyWarning.Location = new System.Drawing.Point(141, 168);
+            this.txtStandbyWarning.Margin = new System.Windows.Forms.Padding(1);
+            this.txtStandbyWarning.Name = "txtStandbyWarning";
+            this.txtStandbyWarning.Size = new System.Drawing.Size(42, 22);
+            this.txtStandbyWarning.TabIndex = 16;
+            // 
+            // txtInProgressCritical
+            // 
+            this.txtInProgressCritical.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInProgressCritical.Location = new System.Drawing.Point(239, 119);
+            this.txtInProgressCritical.Margin = new System.Windows.Forms.Padding(1);
+            this.txtInProgressCritical.Name = "txtInProgressCritical";
+            this.txtInProgressCritical.Size = new System.Drawing.Size(42, 22);
+            this.txtInProgressCritical.TabIndex = 15;
+            // 
+            // txtReadyCritical
+            // 
+            this.txtReadyCritical.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReadyCritical.Location = new System.Drawing.Point(239, 73);
+            this.txtReadyCritical.Margin = new System.Windows.Forms.Padding(1);
+            this.txtReadyCritical.Name = "txtReadyCritical";
+            this.txtReadyCritical.Size = new System.Drawing.Size(42, 22);
+            this.txtReadyCritical.TabIndex = 14;
+            // 
+            // txtInProgressWarning
+            // 
+            this.txtInProgressWarning.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInProgressWarning.Location = new System.Drawing.Point(141, 119);
+            this.txtInProgressWarning.Margin = new System.Windows.Forms.Padding(1);
+            this.txtInProgressWarning.Name = "txtInProgressWarning";
+            this.txtInProgressWarning.Size = new System.Drawing.Size(42, 22);
+            this.txtInProgressWarning.TabIndex = 13;
+            // 
+            // txtReadyWarning
+            // 
+            this.txtReadyWarning.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReadyWarning.Location = new System.Drawing.Point(141, 73);
+            this.txtReadyWarning.Margin = new System.Windows.Forms.Padding(1);
+            this.txtReadyWarning.Name = "txtReadyWarning";
+            this.txtReadyWarning.Size = new System.Drawing.Size(42, 22);
+            this.txtReadyWarning.TabIndex = 9;
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label49.Location = new System.Drawing.Point(236, 41);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(50, 17);
+            this.label49.TabIndex = 12;
+            this.label49.Text = "Critical";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label48.Location = new System.Drawing.Point(138, 41);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(61, 17);
+            this.label48.TabIndex = 11;
+            this.label48.Text = "Warning";
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(410, 552);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(75, 29);
+            this.button15.TabIndex = 7;
+            this.button15.Text = "Apply";
+            this.button15.UseVisualStyleBackColor = true;
             // 
             // groupBox9
             // 
@@ -1557,7 +1720,7 @@
             this.groupBox9.Margin = new System.Windows.Forms.Padding(1);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Padding = new System.Windows.Forms.Padding(1);
-            this.groupBox9.Size = new System.Drawing.Size(496, 592);
+            this.groupBox9.Size = new System.Drawing.Size(496, 204);
             this.groupBox9.TabIndex = 3;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Interface configuration";
@@ -1765,6 +1928,51 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // cbReady
+            // 
+            this.cbReady.AutoSize = true;
+            this.cbReady.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbReady.Location = new System.Drawing.Point(12, 75);
+            this.cbReady.Name = "cbReady";
+            this.cbReady.Size = new System.Drawing.Size(68, 20);
+            this.cbReady.TabIndex = 21;
+            this.cbReady.Text = "Ready";
+            this.cbReady.UseVisualStyleBackColor = true;
+            // 
+            // cbInProgress
+            // 
+            this.cbInProgress.AutoSize = true;
+            this.cbInProgress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbInProgress.Location = new System.Drawing.Point(12, 121);
+            this.cbInProgress.Name = "cbInProgress";
+            this.cbInProgress.Size = new System.Drawing.Size(95, 20);
+            this.cbInProgress.TabIndex = 22;
+            this.cbInProgress.Text = "In Progress";
+            this.cbInProgress.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox2.Location = new System.Drawing.Point(12, 170);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(77, 20);
+            this.checkBox2.TabIndex = 23;
+            this.checkBox2.Text = "Standby";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // cbDisableAllThresholds
+            // 
+            this.cbDisableAllThresholds.AutoSize = true;
+            this.cbDisableAllThresholds.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbDisableAllThresholds.Location = new System.Drawing.Point(394, 22);
+            this.cbDisableAllThresholds.Name = "cbDisableAllThresholds";
+            this.cbDisableAllThresholds.Size = new System.Drawing.Size(91, 20);
+            this.cbDisableAllThresholds.TabIndex = 24;
+            this.cbDisableAllThresholds.Text = "Disable all";
+            this.cbDisableAllThresholds.UseVisualStyleBackColor = true;
+            this.cbDisableAllThresholds.CheckedChanged += new System.EventHandler(this.cbDisableAllThresholds_CheckedChanged);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1782,6 +1990,9 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBReady)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBInProgress)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBStandby)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage1.ResumeLayout(false);
@@ -1803,6 +2014,8 @@
             this.groupBox7.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             this.groupBox8.ResumeLayout(false);
@@ -1956,6 +2169,23 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.PictureBox pBStandby;
+        private System.Windows.Forms.PictureBox pBReady;
+        private System.Windows.Forms.PictureBox pBInProgress;
+        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.TextBox txtStandbyCritical;
+        private System.Windows.Forms.TextBox txtStandbyWarning;
+        private System.Windows.Forms.TextBox txtInProgressCritical;
+        private System.Windows.Forms.TextBox txtReadyCritical;
+        private System.Windows.Forms.TextBox txtInProgressWarning;
+        private System.Windows.Forms.TextBox txtReadyWarning;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.CheckBox cbDisableAllThresholds;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox cbInProgress;
+        private System.Windows.Forms.CheckBox cbReady;
     }
 }
 

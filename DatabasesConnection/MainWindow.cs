@@ -40,9 +40,9 @@ namespace CustomerManager
 
             dbh.Open();
 
-            loadQueues();
-
             InitializeTextElements();
+
+            loadQueues();
 
             //error provider control: http://www.c-sharpcorner.com/article/using-error-provider-control-in-windows-forms-and-C-Sharp/
             //set some mask text boxes
@@ -92,6 +92,7 @@ namespace CustomerManager
                 }
 
             }
+            refreshThresholdsAlerts();
         }
         private void loadDatabase()
         {
@@ -174,6 +175,15 @@ namespace CustomerManager
             // Disable some fields
             dtDateComp.Enabled = false;
             dtDelivered.Enabled = false;
+
+            //TODO take from db
+            txtReadyWarning.Text = "5";
+            txtReadyCritical.Text = "10";
+            txtInProgressWarning.Text = "5";
+            txtInProgressCritical.Text = "10";
+            txtStandbyWarning.Text = "5";
+            txtStandbyCritical.Text = "10";
+
         }
 
         private void formToolStripMenuItem_Click(object sender, EventArgs e)
@@ -432,22 +442,15 @@ namespace CustomerManager
 
         private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
         {
-            //System.Console.WriteLine("clicked ====================================");
-            //System.Console.WriteLine(e.TabPageIndex);
 
-            int TAB_QUEUES = 0;
-            int TAB_INFORMATION = 1;
-            int TAB_DATABASE = 2;
-            int TAB_CONFIGURATION = 3; 
-
-            if (e.TabPageIndex == TAB_QUEUES)
+            if (e.TabPageIndex == Constants.TAB_QUEUES)
             {
                 System.Console.WriteLine("Reload the queues ====================================");
                 loadQueues();
                 
             }
 
-            if (e.TabPageIndex == TAB_DATABASE)
+            if (e.TabPageIndex == Constants.TAB_DATABASE)
             {
                 System.Console.WriteLine("Reload the database  ====================================");
                 loadDatabase();
@@ -533,13 +536,12 @@ namespace CustomerManager
             try
             {
                 int tmp = Convert.ToInt16(selecteIndex);
-                //tmp++;
+
                 DataRow[] returnedRow;
                 returnedRow = ds1.Tables["service"].Select("id='" + tmp + "'");
 
                 DataRow dr1;
-                            
-                //wBDisplay.DocumentText = "<b>Work Order</>";
+
                 dr1 = returnedRow[0];
                 string title = "Work Order";
                 WBDocument document = new WBDocument( wBDisplay, title );
@@ -547,88 +549,6 @@ namespace CustomerManager
                 
                 documentToPrint = document.create();
 
-                //txtBigView.Text = dr1["name"].ToString();
-                /*
-                txtBigView.Clear();
-                txtBigView.AppendText("\t\t\t\t               Work Order             \n");
-                txtBigView.AppendText("==================================================================================");
-                txtBigView.AppendText("\n");
-                txtBigView.AppendText(string.Format("Customer:  {0}", dr1["first_name"].ToString() + " " + dr1["last_name"].ToString()));
-                txtBigView.AppendText(string.Format("       Date:  {0}", dr1["date_in"].ToString()));
-                txtBigView.AppendText(string.Format("       Customer ID:  {0}", dr1["id"].ToString()));
-                txtBigView.AppendText("\n");
-                txtBigView.AppendText(string.Format("Address:  {0}", dr1["address_1"].ToString()));
-                txtBigView.AppendText(string.Format("       City/St./Zipcode:  {0}", dr1["location"].ToString()));
-                txtBigView.AppendText("\n");
-                txtBigView.AppendText(string.Format("Primary phone:  {0:(###)###-####}", dr1["telephone"].ToString()));
-                txtBigView.AppendText(string.Format("        Secondary phone:  {0:(###)###-####}", dr1["telephone"].ToString()));
-                txtBigView.AppendText("\n");
-                txtBigView.AppendText("==================================================================================");
-                txtBigView.AppendText("\n");
-                string tmpStatus = "";
-                if (dr1["status"].ToString() == Constants.STANDBY)
-                {
-                    tmpStatus = "Waiting";
-                }
-                else if (dr1["status"].ToString() == Constants.IN_PROGRESS)
-                {
-                    tmpStatus = "Completed";
-                }
-                else if (dr1["status"].ToString() == Constants.READY)
-                {
-                    tmpStatus = "Fixing";
-                }
-                else if (dr1["status"].ToString() == Constants.COMPLETED)
-                {
-                    tmpStatus = "Ready for pick up/deliver";
-                }
-                txtBigView.AppendText(string.Format("Status:  {0}", tmpStatus));//????
-                txtBigView.AppendText("\n");
-                txtBigView.AppendText(string.Format("ETA of Comp:  {0}", Convert.ToDateTime(dr1["date_eta_comp"]).ToString("MM/dd/yyyy")));
-                txtBigView.AppendText("\n");
-                if (!string.IsNullOrEmpty(dr1["date_comp"].ToString()))
-                {
-                    txtBigView.AppendText(string.Format("Date of Comp:  {0}", Convert.ToDateTime(dr1["date_comp"]).ToString("MM/dd/yyyy")));
-                    txtBigView.AppendText("\n");
-                }
-                else
-                {
-                    txtBigView.AppendText("Date of Comp:\n");
-                }
-                if (!string.IsNullOrEmpty(dr1["date_delivered"].ToString()))
-                {
-                    txtBigView.AppendText(string.Format("Date of P/U:  {0}", Convert.ToDateTime(dr1["date_delivered"]).ToString("MM/dd/yyyy")));
-                    txtBigView.AppendText("\n");
-                }
-                else
-                {
-                    txtBigView.AppendText("Date of P/U:\n");
-                }
-                txtBigView.AppendText("\n");
-                txtBigView.AppendText(string.Format("Brand/Model:  {0}", dr1["brand_model"].ToString()));
-                txtBigView.AppendText(string.Format("        Access:  {0}", dr1["access"].ToString()));
-                txtBigView.AppendText(string.Format("        Condition:  {0}", dr1["condition"].ToString()));
-                txtBigView.AppendText("\n");
-                txtBigView.AppendText(string.Format("Description:  {0}", dr1["description"].ToString()));
-                txtBigView.AppendText("\n");
-                txtBigView.AppendText(string.Format("Work performed:  {0}", dr1["work_performed"].ToString()));
-                txtBigView.AppendText("\n");
-                txtBigView.AppendText("\n");
-                txtBigView.AppendText(string.Format("Part:  {0}", dr1["part1"].ToString()));
-                txtBigView.AppendText(string.Format("        Cost:  {0}", dr1["part1Cost"].ToString()));
-                txtBigView.AppendText("\n");
-                txtBigView.AppendText(string.Format("Part:  {0}", dr1["part2"].ToString()));
-                txtBigView.AppendText(string.Format("        Cost:  {0}", dr1["part2Cost"].ToString()));
-                txtBigView.AppendText("\n");
-                txtBigView.AppendText(string.Format("Part:  {0}", dr1["part3"].ToString()));
-                txtBigView.AppendText(string.Format("        Cost:  {0}", dr1["part3Cost"].ToString()));
-                txtBigView.AppendText("\n");
-                txtBigView.AppendText("\n");
-                txtBigView.AppendText(string.Format("Labor:  {0}", dr1["laborCost"].ToString()));
-                txtBigView.AppendText(string.Format("        SubTotal:  {0}", dr1["subTotalAmt"].ToString()));
-                txtBigView.AppendText(string.Format("        Tax:  {0}", dr1["taxRate"].ToString()));
-                txtBigView.AppendText(string.Format("        Total:  {0}", dr1["totalAmt"].ToString()));
-                */
             }
             catch (Exception ex)
             {
@@ -645,5 +565,30 @@ namespace CustomerManager
 
         }
 
+        private void cbDisableAllThresholds_CheckedChanged(object sender, EventArgs e)
+        {
+            txtReadyWarning.Enabled = false;
+        }
+
+        private void refreshThresholdsAlerts()
+        {
+            int standbyWarning = Convert.ToInt16(txtStandbyWarning.Text);
+            int standbyCritical = Convert.ToInt16(txtStandbyCritical.Text);
+
+            // TODO get the number of standby records
+            int tmp = 5;
+            if( tmp > standbyCritical )
+            {
+                this.pBStandby.Image = global::DatabasesConnection.Properties.Resources.red_btn;
+            }
+            else if (tmp > standbyWarning )
+            {
+                this.pBStandby.Image = global::DatabasesConnection.Properties.Resources.yellow_btn;
+            }
+            else
+            {
+                this.pBStandby.Image = global::DatabasesConnection.Properties.Resources.green_btn;
+            }
+        }
     }
 }

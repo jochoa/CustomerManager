@@ -50,18 +50,23 @@ namespace DatabasesConnection
 {5}
 {6}
 {7}
+{8}
+{9}
+{10}
 </style>
 ";
             string h3_tag = "h3 {color:blue }";
-            string hr_tag = " hr { margin-top:0em; margin-down:0em;}";
-            string p_tag = " p {margin-top:-1em; margin-down:-1em;}";
+            string hr_tag = "hr { margin-top:0em; margin-down:0em;}";
+            string p_tag = "p {margin-top:-1em; margin-down:-1em;}";
             string data_class =
-                "  #data { width:100%; border: 1px solid #ddd; margin-down:2em;  border-radius:9px; - moz - border - radius:9px; }";
-            string data_tr = "#data tr { border: 1px solid #ddd; }";
-            string data_th = "#data th { text-align: left; border: 1px solid #ddd; font-weight: normal; }";
-            string costLeftFormat = " #costLeft { width : 80% }";
-            string costRightFormat = " #costRight { width : 20% }";
-
+                " #data { width:100%;  margin-down:2em;  border-radius:9px; - moz - border - radius:9px;  table-layout: fixed; }";
+            string data_tr = "#data tr {  }";
+            string data_th = "#data th { text-align: left; font-weight: normal;}";
+            string costLeftFormat = "#costLeft { width : 80% }";
+            string costRightFormat = "#costRight { width : 20% }";
+            string bodyFormat = "body {background-color: FloralWhite ;}";
+            string divBackgroundFormat = "#background {position: fixed;top: 0;left: 0;width: 100%;background-color: Linen;border-style: solid;  border: 1px solid white;}";
+            string divBackgroundFormat2 = "#background2 {position: fixed;top: 0;left: 0;width: 100%;background-color: Linen;border-style: solid;  border: 1px solid white;}";
 
             this.style = string.Format(miniStyleTemplate, 
                 h3_tag,
@@ -71,7 +76,10 @@ namespace DatabasesConnection
                 data_tr,
                 data_th,
                 costLeftFormat,
-                costRightFormat
+                costRightFormat,
+                bodyFormat,
+                divBackgroundFormat,
+                divBackgroundFormat2
                 );  //string format dynamic?
            // System.Console.WriteLine(miniStyleTemplate);
         }
@@ -104,11 +112,12 @@ namespace DatabasesConnection
         private void createBody()
         {
             // Already inside body tags
-
+//TODO> try using a div inside the column to avoid breaking up the line
             string miniTemplate = @"
+
 <table id='data'>
 <tr>
-<th><b>Customer:</b> {0} </th>  <th><b> Date in:</b>  {1}  </th> <th> <b>Service Id:</b> {2}</th>
+<td width='50%'><b>Customer:</b> {0} </td>  <th width='30%'><b> Date in:</b>  {1}  </td> <td width='20%'> <b>Service Id:</b> {2}</td>
 </tr>
 <tr>
 <th> <b>Address:</b> {3} </th> <th>&emsp;</th> <th>&emsp;</th> 
@@ -119,7 +128,7 @@ namespace DatabasesConnection
 </table>
 
 {6} <!-- Separation line -->
-
+<div id=background2>
 <table id='data'>
 <tr>
 <th><b>Status:</b>{7}</th><th>&emsp;</th><th>&emsp;</th> 
@@ -132,35 +141,38 @@ namespace DatabasesConnection
 </tr>
 </table>
 
-{11} <!-- Separation line -->
+&emsp;
 
 <table id='data'>
 <tr>
 <th><b>Brand/Model:</b></th> <th><b>Access:</b></th> <th><b>condition:</b></th> 
 </tr>
 <tr>
-<th>{12}</th><th>{13}</th><th>{14}</th> 
+<th>{11}</th><th>{12}</th><th>{13}</th> 
 </tr>
 </table>
-
+&emsp;
 <table id='data'> <!-- One column -->
 <tr>
 <th><b>Description:</b></th> 
 </tr>
 <tr>
-<th>{15}<th> 
+<th>{14}<th> 
 </tr>
 <tr>
 <th><b>Work Performed:</b></th> 
 </tr>
 <tr>
-<th>{16}</th> 
+<th>{15}</th> 
 </tr>
 </table>
+</div>
 
-{17} <!-- Separation line -->
+&emsp;
+<div id=background>
+{16}  <!-- Additional cost template here-->
 
-{18}  <!-- Additional cost template here-->
+&emsp;
 
 <table id='data'>  <!-- Two columns -->
 <tr>
@@ -176,6 +188,7 @@ namespace DatabasesConnection
 <th id='costLeft'><b>Total:</b></th><th id='costRight'>sdss&emsp; </th>
 </tr>
 </table>
+</div>
 ";
             // <p><b></b></p>
             string completeName = working_dr["first_name"].ToString()
@@ -234,13 +247,11 @@ namespace DatabasesConnection
                 "02/01/2000",
                 "03/01/2000",
                 "04/01/2000",
-                separationLine,
                 brand_model,
                 access,
                 condition,
                 description,
                 worked_perfomed,
-                separationLine,
                 additionalCostsSection
                 );
 
@@ -252,7 +263,7 @@ namespace DatabasesConnection
             string additionalCostminiTemplate = @"
 <table id='data'>
 <tr>
-<th><b>Additional costs</b></th><th>&emsp;</th>
+<th id='costLeft'><b>Additional costs</b></th><th id='costRight'>&emsp;</th>
 </tr>
 {0}
 {1}
@@ -269,7 +280,7 @@ namespace DatabasesConnection
 
                     string temp = @"
 <tr>
-<th id='costLeft'>{0}</th><th id='costRight'>{1}</th>
+<td id='costLeft'>{0}</td><td id='costRight'>{1}</td>
 </tr>
 ";
                     costTemplates[i] = string.Format(temp, working_dr["part" + i].ToString(), working_dr["part" + i + "Cost"].ToString());

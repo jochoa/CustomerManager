@@ -23,15 +23,6 @@ namespace CustomerManager
             System.Console.WriteLine("Starting program -------------------------------");
 
             String log_prefix = "[Main] ";
-            // The task: Create a customer manager program with queues etc similar to lantec
-            /*
-             1. Connect to any database
-             2. Create db basic schema
-             3. Create connector
-            */
-          
-
-            //######################
 
             DBConn connection = new DBConn();
 
@@ -48,6 +39,7 @@ namespace CustomerManager
             {
                 System.Console.WriteLine(log_prefix + "Loading dbh... " + configDBSource );
                 dbh = connection.getDBConn(configDBSource);
+
             }
             else
             {
@@ -58,31 +50,6 @@ namespace CustomerManager
                 dbh = new_db.createDatabase(configDBSource);
 
             }
-
-            // after here is only for testing
-            dbh.Open();
-            String sql = "select * from customers";
-            SQLiteCommand command = new SQLiteCommand(sql, dbh);
-
-            SQLiteDataReader reader = command.ExecuteReader();
-            while (reader.Read())
-                Console.WriteLine("id: " + reader["id"] + "\tfirst_name: " + reader["first_name"] + "\tlast_name: " + reader["last_name"]);
-
-            sql = "select * from service";
-            command = new SQLiteCommand(sql, dbh);
-            reader = command.ExecuteReader();
-            while (reader.Read())
-                Console.WriteLine("id: " + reader["id"] + "\tdescription: " + reader["description"] + "\tdate_in: " + reader["date_in"]);
-
-            //dbh.Close();
-
-            Customer customer = new Customer();
-            customer.First_Name = "Joe";
-            System.Console.WriteLine("<<<<<<<<<<<<<<<<<<<<< first name >>>>>>>>>>>>>>>>>>>>: " + customer.First_Name);
-            customer.Email = "test@gmail.com";
-            System.Console.WriteLine("<<<<<<<<<<<<<<<<<<<<< email >>>>>>>>>>>>>>>>>>>>: " + customer.Email);
-
-            dbh.Close();
 
             // Open the main window
             Application.Run(new MainWindow());
