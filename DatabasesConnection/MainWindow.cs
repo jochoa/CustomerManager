@@ -44,6 +44,8 @@ namespace CustomerManager
 
             loadQueues();
 
+            toggleControlsOnOff( false );
+
             //error provider control: http://www.c-sharpcorner.com/article/using-error-provider-control-in-windows-forms-and-C-Sharp/
             //set some mask text boxes
             txtMaskedLabor.Mask = "00000.00";
@@ -57,6 +59,57 @@ namespace CustomerManager
 
         private void Form1_Load(object sender, EventArgs e)
         {
+        }
+
+        private void toggleControlsOnOff( Boolean value)
+        {
+            gBAdditionalCosts.Enabled = value;
+            gBTotalCosts.Enabled = value;
+            gBCustomerInfo.Enabled = value;
+            gBCondition.Enabled = value;
+            gBBrandModel.Enabled = value;
+            gBAccessories.Enabled = value;
+            txtDescription.Enabled = value;
+            txtWorkPerformed.Enabled = value;
+
+            btnSave.Enabled = value;
+            btnCancel.Enabled = value;
+
+            if( value == false )
+            {
+                btnNew.Enabled = true;
+            }
+
+        }
+
+        private void clearGroupControls(GroupBox gBox)
+        {
+            foreach (Control ctr in gBox.Controls)
+            {
+                // TODO test
+                if (ctr is TextBox)
+                {
+                    ctr.Text = "";
+
+                }
+                else if (ctr is CheckedListBox)
+                {
+                    
+                    CheckedListBox clb = (CheckedListBox)ctr;
+                    foreach (int checkedItemIndex in clb.CheckedIndices)
+                    {
+                        clb.SetItemChecked(checkedItemIndex, false);
+                    }
+                }
+                else if (ctr is CheckBox)
+                {
+                    ((CheckBox)ctr).Checked = false;
+                }
+                else if (ctr is ComboBox)
+                {
+                    ((ComboBox)ctr).SelectedIndex = 0;
+                }
+            }
         }
 
         private void loadQueues()
@@ -589,6 +642,40 @@ namespace CustomerManager
             {
                 this.pBStandby.Image = global::DatabasesConnection.Properties.Resources.green_btn;
             }
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            // enable controls
+            toggleControlsOnOff(true);
+            btnNew.Enabled = false;
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            var confirmResult = MessageBox.Show("This will reset the form. Are you sure?",
+                                     "Confirm Reset!",
+                                     MessageBoxButtons.YesNo);
+
+            if (confirmResult == DialogResult.Yes)
+            {
+                clearGroupControls(gBCustomerInfo);
+                // disable controls
+                toggleControlsOnOff(false);
+
+            }
+            else
+            {
+
+            }
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clearGroupControls(gBCustomerInfo);
+           
         }
     }
 }

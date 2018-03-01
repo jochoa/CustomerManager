@@ -59,25 +59,27 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.txtMaskedLabor = new System.Windows.Forms.MaskedTextBox();
-            this.label42 = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.label31 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
+            this.btnNew = new System.Windows.Forms.Button();
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.btnClear = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
-            this.txtTax = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.txtLabor = new System.Windows.Forms.TextBox();
-            this.txtSubTotal = new System.Windows.Forms.TextBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.gBAdditionalCosts = new System.Windows.Forms.GroupBox();
             this.label22 = new System.Windows.Forms.Label();
             this.txtPart3 = new System.Windows.Forms.TextBox();
             this.txtPartCost3 = new System.Windows.Forms.TextBox();
@@ -93,25 +95,18 @@
             this.txtWorkPerformed = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.gBCondition = new System.Windows.Forms.GroupBox();
             this.rBOther = new System.Windows.Forms.RadioButton();
             this.rBGood = new System.Windows.Forms.RadioButton();
             this.rBNew = new System.Windows.Forms.RadioButton();
             this.txtOtherCondition = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.cBPowerCord = new System.Windows.Forms.CheckBox();
-            this.txtOtherAccess = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gBAccessories = new System.Windows.Forms.GroupBox();
+            this.gBBrandModel = new System.Windows.Forms.GroupBox();
             this.txtBrandModel = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gBCustomerInfo = new System.Windows.Forms.GroupBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -120,7 +115,6 @@
             this.dtETAComp = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.dtDate = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtLacation = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
@@ -131,6 +125,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.gBTotalCosts = new System.Windows.Forms.GroupBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.button7 = new System.Windows.Forms.Button();
@@ -155,6 +150,10 @@
             this.btnPrint = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.cbDisableAllThresholds = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.cbInProgress = new System.Windows.Forms.CheckBox();
+            this.cbReady = new System.Windows.Forms.CheckBox();
             this.txtStandbyCritical = new System.Windows.Forms.TextBox();
             this.txtStandbyWarning = new System.Windows.Forms.TextBox();
             this.txtInProgressCritical = new System.Windows.Forms.TextBox();
@@ -185,10 +184,12 @@
             this.label35 = new System.Windows.Forms.Label();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.cbReady = new System.Windows.Forms.CheckBox();
-            this.cbInProgress = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.cbDisableAllThresholds = new System.Windows.Forms.CheckBox();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.txtTax = new System.Windows.Forms.TextBox();
+            this.txtLabor = new System.Windows.Forms.TextBox();
+            this.txtSubTotal = new System.Windows.Forms.TextBox();
+            this.cBPowerCord = new System.Windows.Forms.CheckBox();
+            this.txtOtherAccess = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBReady)).BeginInit();
@@ -197,11 +198,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage1.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gBAdditionalCosts.SuspendLayout();
+            this.gBCondition.SuspendLayout();
+            this.gBAccessories.SuspendLayout();
+            this.gBBrandModel.SuspendLayout();
+            this.gBCustomerInfo.SuspendLayout();
+            this.gBTotalCosts.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -549,35 +551,38 @@
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.tabPage1.Controls.Add(this.txtMaskedLabor);
-            this.tabPage1.Controls.Add(this.label42);
+            this.tabPage1.Controls.Add(this.btnSave);
+            this.tabPage1.Controls.Add(this.label15);
             this.tabPage1.Controls.Add(this.label34);
+            this.tabPage1.Controls.Add(this.txtSearch);
+            this.tabPage1.Controls.Add(this.btnSearch);
             this.tabPage1.Controls.Add(this.label33);
             this.tabPage1.Controls.Add(this.label32);
+            this.tabPage1.Controls.Add(this.btnCancel);
             this.tabPage1.Controls.Add(this.label31);
             this.tabPage1.Controls.Add(this.button6);
+            this.tabPage1.Controls.Add(this.btnNew);
             this.tabPage1.Controls.Add(this.label30);
             this.tabPage1.Controls.Add(this.label29);
             this.tabPage1.Controls.Add(this.label28);
             this.tabPage1.Controls.Add(this.label27);
             this.tabPage1.Controls.Add(this.label26);
-            this.tabPage1.Controls.Add(this.txtTotal);
+            this.tabPage1.Controls.Add(this.btnClear);
             this.tabPage1.Controls.Add(this.label23);
-            this.tabPage1.Controls.Add(this.txtTax);
             this.tabPage1.Controls.Add(this.label24);
             this.tabPage1.Controls.Add(this.label25);
-            this.tabPage1.Controls.Add(this.txtLabor);
-            this.tabPage1.Controls.Add(this.txtSubTotal);
-            this.tabPage1.Controls.Add(this.groupBox5);
+            this.tabPage1.Controls.Add(this.gBAdditionalCosts);
             this.tabPage1.Controls.Add(this.label19);
             this.tabPage1.Controls.Add(this.label18);
             this.tabPage1.Controls.Add(this.label17);
             this.tabPage1.Controls.Add(this.txtWorkPerformed);
             this.tabPage1.Controls.Add(this.label16);
             this.tabPage1.Controls.Add(this.txtDescription);
-            this.tabPage1.Controls.Add(this.groupBox4);
-            this.tabPage1.Controls.Add(this.groupBox3);
-            this.tabPage1.Controls.Add(this.groupBox2);
-            this.tabPage1.Controls.Add(this.groupBox1);
+            this.tabPage1.Controls.Add(this.gBCondition);
+            this.tabPage1.Controls.Add(this.gBAccessories);
+            this.tabPage1.Controls.Add(this.gBBrandModel);
+            this.tabPage1.Controls.Add(this.gBCustomerInfo);
+            this.tabPage1.Controls.Add(this.gBTotalCosts);
             this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -589,22 +594,33 @@
             // txtMaskedLabor
             // 
             this.txtMaskedLabor.BeepOnError = true;
-            this.txtMaskedLabor.Location = new System.Drawing.Point(699, 572);
+            this.txtMaskedLabor.Location = new System.Drawing.Point(401, 702);
             this.txtMaskedLabor.Margin = new System.Windows.Forms.Padding(1);
             this.txtMaskedLabor.Name = "txtMaskedLabor";
             this.txtMaskedLabor.PromptChar = '0';
             this.txtMaskedLabor.Size = new System.Drawing.Size(99, 23);
             this.txtMaskedLabor.TabIndex = 56;
             // 
-            // label42
+            // btnSave
             // 
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Open Sans", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(850, 103);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(79, 19);
-            this.label42.TabIndex = 55;
-            this.label42.Text = "Service id:";
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(936, 131);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(106, 31);
+            this.btnSave.TabIndex = 20;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(844, 296);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(186, 13);
+            this.label15.TabIndex = 24;
+            this.label15.Text = "Search by service id or phone number";
             // 
             // label34
             // 
@@ -615,6 +631,23 @@
             this.label34.Size = new System.Drawing.Size(144, 16);
             this.label34.TabIndex = 54;
             this.label34.Text = "_________________";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(824, 312);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(218, 23);
+            this.txtSearch.TabIndex = 22;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(824, 258);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(218, 31);
+            this.btnSearch.TabIndex = 23;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
             // 
             // label33
             // 
@@ -636,6 +669,17 @@
             this.label32.TabIndex = 52;
             this.label32.Text = "_________________";
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(936, 171);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(106, 31);
+            this.btnCancel.TabIndex = 21;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // label31
             // 
             this.label31.AutoSize = true;
@@ -655,6 +699,17 @@
             this.button6.TabIndex = 25;
             this.button6.Text = "Print Invoice";
             this.button6.UseVisualStyleBackColor = true;
+            // 
+            // btnNew
+            // 
+            this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNew.Location = new System.Drawing.Point(824, 131);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(106, 31);
+            this.btnNew.TabIndex = 19;
+            this.btnNew.Text = "New";
+            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // label30
             // 
@@ -706,16 +761,16 @@
             this.label26.TabIndex = 46;
             this.label26.Text = "$";
             // 
-            // txtTotal
+            // btnClear
             // 
-            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(952, 657);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(78, 22);
-            this.txtTotal.TabIndex = 47;
-            this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTotal_KeyPress);
-            this.txtTotal.Leave += new System.EventHandler(this.txtTotal_Leave);
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Location = new System.Drawing.Point(936, 208);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(106, 31);
+            this.btnClear.TabIndex = 10;
+            this.btnClear.Text = "Clear All";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // label23
             // 
@@ -726,15 +781,6 @@
             this.label23.Size = new System.Drawing.Size(16, 17);
             this.label23.TabIndex = 44;
             this.label23.Text = "$";
-            // 
-            // txtTax
-            // 
-            this.txtTax.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTax.Location = new System.Drawing.Point(952, 629);
-            this.txtTax.Name = "txtTax";
-            this.txtTax.Size = new System.Drawing.Size(78, 22);
-            this.txtTax.TabIndex = 45;
-            this.txtTax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label24
             // 
@@ -756,46 +802,24 @@
             this.label25.TabIndex = 40;
             this.label25.Text = "$";
             // 
-            // txtLabor
+            // gBAdditionalCosts
             // 
-            this.txtLabor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLabor.Location = new System.Drawing.Point(952, 569);
-            this.txtLabor.Name = "txtLabor";
-            this.txtLabor.Size = new System.Drawing.Size(78, 22);
-            this.txtLabor.TabIndex = 41;
-            this.txtLabor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtLabor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLabor_KeyPress);
-            this.txtLabor.Leave += new System.EventHandler(this.txtLabor_Leave);
-            // 
-            // txtSubTotal
-            // 
-            this.txtSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSubTotal.Location = new System.Drawing.Point(952, 600);
-            this.txtSubTotal.Name = "txtSubTotal";
-            this.txtSubTotal.Size = new System.Drawing.Size(78, 22);
-            this.txtSubTotal.TabIndex = 43;
-            this.txtSubTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtSubTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSubTotal_KeyPress);
-            this.txtSubTotal.Leave += new System.EventHandler(this.txtSubTotal_Leave);
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.label22);
-            this.groupBox5.Controls.Add(this.txtPart3);
-            this.groupBox5.Controls.Add(this.txtPartCost3);
-            this.groupBox5.Controls.Add(this.label21);
-            this.groupBox5.Controls.Add(this.label20);
-            this.groupBox5.Controls.Add(this.txtPart2);
-            this.groupBox5.Controls.Add(this.txtPartCost1);
-            this.groupBox5.Controls.Add(this.txtPartCost2);
-            this.groupBox5.Controls.Add(this.txtPart1);
-            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(585, 417);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(457, 120);
-            this.groupBox5.TabIndex = 26;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Additional Costs";
+            this.gBAdditionalCosts.Controls.Add(this.label22);
+            this.gBAdditionalCosts.Controls.Add(this.txtPart3);
+            this.gBAdditionalCosts.Controls.Add(this.txtPartCost3);
+            this.gBAdditionalCosts.Controls.Add(this.label21);
+            this.gBAdditionalCosts.Controls.Add(this.label20);
+            this.gBAdditionalCosts.Controls.Add(this.txtPart2);
+            this.gBAdditionalCosts.Controls.Add(this.txtPartCost1);
+            this.gBAdditionalCosts.Controls.Add(this.txtPartCost2);
+            this.gBAdditionalCosts.Controls.Add(this.txtPart1);
+            this.gBAdditionalCosts.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gBAdditionalCosts.Location = new System.Drawing.Point(585, 417);
+            this.gBAdditionalCosts.Name = "gBAdditionalCosts";
+            this.gBAdditionalCosts.Size = new System.Drawing.Size(457, 120);
+            this.gBAdditionalCosts.TabIndex = 26;
+            this.gBAdditionalCosts.TabStop = false;
+            this.gBAdditionalCosts.Text = "Additional Costs";
             // 
             // label22
             // 
@@ -947,19 +971,19 @@
             this.txtDescription.Size = new System.Drawing.Size(497, 80);
             this.txtDescription.TabIndex = 28;
             // 
-            // groupBox4
+            // gBCondition
             // 
-            this.groupBox4.Controls.Add(this.rBOther);
-            this.groupBox4.Controls.Add(this.rBGood);
-            this.groupBox4.Controls.Add(this.rBNew);
-            this.groupBox4.Controls.Add(this.txtOtherCondition);
-            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(699, 350);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(343, 49);
-            this.groupBox4.TabIndex = 27;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Condition";
+            this.gBCondition.Controls.Add(this.rBOther);
+            this.gBCondition.Controls.Add(this.rBGood);
+            this.gBCondition.Controls.Add(this.rBNew);
+            this.gBCondition.Controls.Add(this.txtOtherCondition);
+            this.gBCondition.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gBCondition.Location = new System.Drawing.Point(699, 350);
+            this.gBCondition.Name = "gBCondition";
+            this.gBCondition.Size = new System.Drawing.Size(343, 49);
+            this.gBCondition.TabIndex = 27;
+            this.gBCondition.TabStop = false;
+            this.gBCondition.Text = "Condition";
             // 
             // rBOther
             // 
@@ -1006,48 +1030,28 @@
             this.txtOtherCondition.Size = new System.Drawing.Size(137, 22);
             this.txtOtherCondition.TabIndex = 26;
             // 
-            // groupBox3
+            // gBAccessories
             // 
-            this.groupBox3.Controls.Add(this.cBPowerCord);
-            this.groupBox3.Controls.Add(this.txtOtherAccess);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(352, 350);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(341, 49);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Accessories";
+            this.gBAccessories.Controls.Add(this.txtOtherAccess);
+            this.gBAccessories.Controls.Add(this.cBPowerCord);
+            this.gBAccessories.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gBAccessories.Location = new System.Drawing.Point(352, 350);
+            this.gBAccessories.Name = "gBAccessories";
+            this.gBAccessories.Size = new System.Drawing.Size(341, 49);
+            this.gBAccessories.TabIndex = 2;
+            this.gBAccessories.TabStop = false;
+            this.gBAccessories.Text = "Accessories";
             // 
-            // cBPowerCord
+            // gBBrandModel
             // 
-            this.cBPowerCord.AutoSize = true;
-            this.cBPowerCord.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cBPowerCord.Location = new System.Drawing.Point(6, 22);
-            this.cBPowerCord.Name = "cBPowerCord";
-            this.cBPowerCord.Size = new System.Drawing.Size(97, 20);
-            this.cBPowerCord.TabIndex = 3;
-            this.cBPowerCord.Text = "Power Cord";
-            this.cBPowerCord.UseVisualStyleBackColor = true;
-            // 
-            // txtOtherAccess
-            // 
-            this.txtOtherAccess.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOtherAccess.Location = new System.Drawing.Point(127, 19);
-            this.txtOtherAccess.MaxLength = 75;
-            this.txtOtherAccess.Name = "txtOtherAccess";
-            this.txtOtherAccess.Size = new System.Drawing.Size(208, 22);
-            this.txtOtherAccess.TabIndex = 26;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.txtBrandModel);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(6, 350);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(340, 49);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Brand and Model";
+            this.gBBrandModel.Controls.Add(this.txtBrandModel);
+            this.gBBrandModel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gBBrandModel.Location = new System.Drawing.Point(6, 350);
+            this.gBBrandModel.Name = "gBBrandModel";
+            this.gBBrandModel.Size = new System.Drawing.Size(340, 49);
+            this.gBBrandModel.TabIndex = 1;
+            this.gBBrandModel.TabStop = false;
+            this.gBBrandModel.Text = "Brand and Model";
             // 
             // txtBrandModel
             // 
@@ -1058,43 +1062,37 @@
             this.txtBrandModel.Size = new System.Drawing.Size(324, 22);
             this.txtBrandModel.TabIndex = 25;
             // 
-            // groupBox1
+            // gBCustomerInfo
             // 
-            this.groupBox1.Controls.Add(this.txtEmail);
-            this.groupBox1.Controls.Add(this.label43);
-            this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.btnSave);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.dtDelivered);
-            this.groupBox1.Controls.Add(this.dtDateComp);
-            this.groupBox1.Controls.Add(this.dtETAComp);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.dtDate);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.txtPhone);
-            this.groupBox1.Controls.Add(this.txtLacation);
-            this.groupBox1.Controls.Add(this.txtAddress);
-            this.groupBox1.Controls.Add(this.txtLastName);
-            this.groupBox1.Controls.Add(this.txtFirstName);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.groupBox1.Location = new System.Drawing.Point(6, 114);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1036, 221);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Customer Information";
+            this.gBCustomerInfo.Controls.Add(this.txtEmail);
+            this.gBCustomerInfo.Controls.Add(this.label42);
+            this.gBCustomerInfo.Controls.Add(this.label43);
+            this.gBCustomerInfo.Controls.Add(this.label14);
+            this.gBCustomerInfo.Controls.Add(this.label13);
+            this.gBCustomerInfo.Controls.Add(this.label12);
+            this.gBCustomerInfo.Controls.Add(this.dtDelivered);
+            this.gBCustomerInfo.Controls.Add(this.dtDateComp);
+            this.gBCustomerInfo.Controls.Add(this.dtETAComp);
+            this.gBCustomerInfo.Controls.Add(this.label11);
+            this.gBCustomerInfo.Controls.Add(this.dtDate);
+            this.gBCustomerInfo.Controls.Add(this.txtPhone);
+            this.gBCustomerInfo.Controls.Add(this.txtLacation);
+            this.gBCustomerInfo.Controls.Add(this.txtAddress);
+            this.gBCustomerInfo.Controls.Add(this.txtLastName);
+            this.gBCustomerInfo.Controls.Add(this.txtFirstName);
+            this.gBCustomerInfo.Controls.Add(this.label10);
+            this.gBCustomerInfo.Controls.Add(this.label9);
+            this.gBCustomerInfo.Controls.Add(this.label8);
+            this.gBCustomerInfo.Controls.Add(this.label7);
+            this.gBCustomerInfo.Controls.Add(this.label6);
+            this.gBCustomerInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gBCustomerInfo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.gBCustomerInfo.Location = new System.Drawing.Point(6, 114);
+            this.gBCustomerInfo.Name = "gBCustomerInfo";
+            this.gBCustomerInfo.Size = new System.Drawing.Size(791, 221);
+            this.gBCustomerInfo.TabIndex = 0;
+            this.gBCustomerInfo.TabStop = false;
+            this.gBCustomerInfo.Text = "Customer Information";
             // 
             // txtEmail
             // 
@@ -1104,6 +1102,16 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(160, 25);
             this.txtEmail.TabIndex = 26;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Open Sans", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.Location = new System.Drawing.Point(479, 19);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(79, 19);
+            this.label42.TabIndex = 55;
+            this.label42.Text = "Service id:";
             // 
             // label43
             // 
@@ -1115,69 +1123,11 @@
             this.label43.TabIndex = 25;
             this.label43.Text = "E-Mail";
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(554, 192);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(204, 17);
-            this.label15.TabIndex = 24;
-            this.label15.Text = "Enter a 10-digit Phone Number";
-            // 
-            // button5
-            // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(924, 178);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(106, 31);
-            this.button5.TabIndex = 23;
-            this.button5.Text = "Search";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(759, 186);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(160, 23);
-            this.textBox6.TabIndex = 22;
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(924, 97);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(106, 31);
-            this.button4.TabIndex = 21;
-            this.button4.Text = "Cancel";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(924, 60);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(106, 31);
-            this.btnSave.TabIndex = 20;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(924, 22);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(106, 31);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "New";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(456, 123);
+            this.label14.Location = new System.Drawing.Point(456, 182);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(102, 17);
             this.label14.TabIndex = 18;
@@ -1187,7 +1137,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(456, 91);
+            this.label13.Location = new System.Drawing.Point(456, 150);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(94, 17);
             this.label13.TabIndex = 17;
@@ -1197,7 +1147,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(456, 60);
+            this.label12.Location = new System.Drawing.Point(456, 119);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(91, 17);
             this.label12.TabIndex = 16;
@@ -1205,21 +1155,21 @@
             // 
             // dtDelivered
             // 
-            this.dtDelivered.Location = new System.Drawing.Point(558, 123);
+            this.dtDelivered.Location = new System.Drawing.Point(558, 182);
             this.dtDelivered.Name = "dtDelivered";
             this.dtDelivered.Size = new System.Drawing.Size(200, 23);
             this.dtDelivered.TabIndex = 15;
             // 
             // dtDateComp
             // 
-            this.dtDateComp.Location = new System.Drawing.Point(558, 91);
+            this.dtDateComp.Location = new System.Drawing.Point(558, 150);
             this.dtDateComp.Name = "dtDateComp";
             this.dtDateComp.Size = new System.Drawing.Size(200, 23);
             this.dtDateComp.TabIndex = 14;
             // 
             // dtETAComp
             // 
-            this.dtETAComp.Location = new System.Drawing.Point(558, 60);
+            this.dtETAComp.Location = new System.Drawing.Point(558, 119);
             this.dtETAComp.Name = "dtETAComp";
             this.dtETAComp.Size = new System.Drawing.Size(200, 23);
             this.dtETAComp.TabIndex = 13;
@@ -1228,7 +1178,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(456, 30);
+            this.label11.Location = new System.Drawing.Point(456, 89);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(38, 17);
             this.label11.TabIndex = 12;
@@ -1236,20 +1186,10 @@
             // 
             // dtDate
             // 
-            this.dtDate.Location = new System.Drawing.Point(558, 30);
+            this.dtDate.Location = new System.Drawing.Point(558, 89);
             this.dtDate.Name = "dtDate";
             this.dtDate.Size = new System.Drawing.Size(200, 23);
             this.dtDate.TabIndex = 11;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(946, 150);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(77, 24);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Clear All";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // txtPhone
             // 
@@ -1289,7 +1229,6 @@
             // 
             // txtFirstName
             // 
-            this.txtFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFirstName.Font = new System.Drawing.Font("Open Sans", 9.900001F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFirstName.Location = new System.Drawing.Point(180, 30);
             this.txtFirstName.MaxLength = 20;
@@ -1347,6 +1286,20 @@
             this.label6.Size = new System.Drawing.Size(76, 17);
             this.label6.TabIndex = 0;
             this.label6.Text = "First Name";
+            // 
+            // gBTotalCosts
+            // 
+            this.gBTotalCosts.Controls.Add(this.txtTotal);
+            this.gBTotalCosts.Controls.Add(this.txtTax);
+            this.gBTotalCosts.Controls.Add(this.txtLabor);
+            this.gBTotalCosts.Controls.Add(this.txtSubTotal);
+            this.gBTotalCosts.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gBTotalCosts.Location = new System.Drawing.Point(585, 543);
+            this.gBTotalCosts.Name = "gBTotalCosts";
+            this.gBTotalCosts.Size = new System.Drawing.Size(457, 160);
+            this.gBTotalCosts.TabIndex = 57;
+            this.gBTotalCosts.TabStop = false;
+            this.gBTotalCosts.Text = "Total Costs";
             // 
             // tabPage3
             // 
@@ -1621,6 +1574,51 @@
             this.groupBox11.TabIndex = 11;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Queues Threshold configuration";
+            // 
+            // cbDisableAllThresholds
+            // 
+            this.cbDisableAllThresholds.AutoSize = true;
+            this.cbDisableAllThresholds.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbDisableAllThresholds.Location = new System.Drawing.Point(394, 22);
+            this.cbDisableAllThresholds.Name = "cbDisableAllThresholds";
+            this.cbDisableAllThresholds.Size = new System.Drawing.Size(91, 20);
+            this.cbDisableAllThresholds.TabIndex = 24;
+            this.cbDisableAllThresholds.Text = "Disable all";
+            this.cbDisableAllThresholds.UseVisualStyleBackColor = true;
+            this.cbDisableAllThresholds.CheckedChanged += new System.EventHandler(this.cbDisableAllThresholds_CheckedChanged);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox2.Location = new System.Drawing.Point(12, 170);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(77, 20);
+            this.checkBox2.TabIndex = 23;
+            this.checkBox2.Text = "Standby";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // cbInProgress
+            // 
+            this.cbInProgress.AutoSize = true;
+            this.cbInProgress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbInProgress.Location = new System.Drawing.Point(12, 121);
+            this.cbInProgress.Name = "cbInProgress";
+            this.cbInProgress.Size = new System.Drawing.Size(95, 20);
+            this.cbInProgress.TabIndex = 22;
+            this.cbInProgress.Text = "In Progress";
+            this.cbInProgress.UseVisualStyleBackColor = true;
+            // 
+            // cbReady
+            // 
+            this.cbReady.AutoSize = true;
+            this.cbReady.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbReady.Location = new System.Drawing.Point(12, 75);
+            this.cbReady.Name = "cbReady";
+            this.cbReady.Size = new System.Drawing.Size(68, 20);
+            this.cbReady.TabIndex = 21;
+            this.cbReady.Text = "Ready";
+            this.cbReady.UseVisualStyleBackColor = true;
             // 
             // txtStandbyCritical
             // 
@@ -1928,50 +1926,61 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // cbReady
+            // txtTotal
             // 
-            this.cbReady.AutoSize = true;
-            this.cbReady.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbReady.Location = new System.Drawing.Point(12, 75);
-            this.cbReady.Name = "cbReady";
-            this.cbReady.Size = new System.Drawing.Size(68, 20);
-            this.cbReady.TabIndex = 21;
-            this.cbReady.Text = "Ready";
-            this.cbReady.UseVisualStyleBackColor = true;
+            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.Location = new System.Drawing.Point(367, 114);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(78, 22);
+            this.txtTotal.TabIndex = 51;
+            this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // cbInProgress
+            // txtTax
             // 
-            this.cbInProgress.AutoSize = true;
-            this.cbInProgress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbInProgress.Location = new System.Drawing.Point(12, 121);
-            this.cbInProgress.Name = "cbInProgress";
-            this.cbInProgress.Size = new System.Drawing.Size(95, 20);
-            this.cbInProgress.TabIndex = 22;
-            this.cbInProgress.Text = "In Progress";
-            this.cbInProgress.UseVisualStyleBackColor = true;
+            this.txtTax.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTax.Location = new System.Drawing.Point(367, 86);
+            this.txtTax.Name = "txtTax";
+            this.txtTax.Size = new System.Drawing.Size(78, 22);
+            this.txtTax.TabIndex = 50;
+            this.txtTax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // checkBox2
+            // txtLabor
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(12, 170);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(77, 20);
-            this.checkBox2.TabIndex = 23;
-            this.checkBox2.Text = "Standby";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.txtLabor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLabor.Location = new System.Drawing.Point(367, 26);
+            this.txtLabor.Name = "txtLabor";
+            this.txtLabor.Size = new System.Drawing.Size(78, 22);
+            this.txtLabor.TabIndex = 48;
+            this.txtLabor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // cbDisableAllThresholds
+            // txtSubTotal
             // 
-            this.cbDisableAllThresholds.AutoSize = true;
-            this.cbDisableAllThresholds.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDisableAllThresholds.Location = new System.Drawing.Point(394, 22);
-            this.cbDisableAllThresholds.Name = "cbDisableAllThresholds";
-            this.cbDisableAllThresholds.Size = new System.Drawing.Size(91, 20);
-            this.cbDisableAllThresholds.TabIndex = 24;
-            this.cbDisableAllThresholds.Text = "Disable all";
-            this.cbDisableAllThresholds.UseVisualStyleBackColor = true;
-            this.cbDisableAllThresholds.CheckedChanged += new System.EventHandler(this.cbDisableAllThresholds_CheckedChanged);
+            this.txtSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSubTotal.Location = new System.Drawing.Point(367, 57);
+            this.txtSubTotal.Name = "txtSubTotal";
+            this.txtSubTotal.Size = new System.Drawing.Size(78, 22);
+            this.txtSubTotal.TabIndex = 49;
+            this.txtSubTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // cBPowerCord
+            // 
+            this.cBPowerCord.AutoSize = true;
+            this.cBPowerCord.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cBPowerCord.Location = new System.Drawing.Point(6, 20);
+            this.cBPowerCord.Name = "cBPowerCord";
+            this.cBPowerCord.Size = new System.Drawing.Size(97, 20);
+            this.cBPowerCord.TabIndex = 28;
+            this.cBPowerCord.Text = "Power Cord";
+            this.cBPowerCord.UseVisualStyleBackColor = true;
+            // 
+            // txtOtherAccess
+            // 
+            this.txtOtherAccess.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOtherAccess.Location = new System.Drawing.Point(113, 18);
+            this.txtOtherAccess.MaxLength = 75;
+            this.txtOtherAccess.Name = "txtOtherAccess";
+            this.txtOtherAccess.Size = new System.Drawing.Size(208, 22);
+            this.txtOtherAccess.TabIndex = 29;
             // 
             // MainWindow
             // 
@@ -1997,16 +2006,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gBAdditionalCosts.ResumeLayout(false);
+            this.gBAdditionalCosts.PerformLayout();
+            this.gBCondition.ResumeLayout(false);
+            this.gBCondition.PerformLayout();
+            this.gBAccessories.ResumeLayout(false);
+            this.gBAccessories.PerformLayout();
+            this.gBBrandModel.ResumeLayout(false);
+            this.gBBrandModel.PerformLayout();
+            this.gBCustomerInfo.ResumeLayout(false);
+            this.gBCustomerInfo.PerformLayout();
+            this.gBTotalCosts.ResumeLayout(false);
+            this.gBTotalCosts.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.groupBox10.ResumeLayout(false);
@@ -2051,8 +2062,8 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gBBrandModel;
+        private System.Windows.Forms.GroupBox gBCustomerInfo;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
@@ -2067,8 +2078,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.DateTimePicker dtDate;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
@@ -2076,20 +2087,18 @@
         private System.Windows.Forms.DateTimePicker dtDateComp;
         private System.Windows.Forms.DateTimePicker dtETAComp;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox gBAccessories;
         private System.Windows.Forms.TextBox txtBrandModel;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox gBCondition;
         private System.Windows.Forms.RadioButton rBOther;
         private System.Windows.Forms.RadioButton rBGood;
         private System.Windows.Forms.RadioButton rBNew;
         private System.Windows.Forms.TextBox txtOtherCondition;
-        private System.Windows.Forms.CheckBox cBPowerCord;
-        private System.Windows.Forms.TextBox txtOtherAccess;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label32;
@@ -2100,14 +2109,10 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox txtTax;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox txtLabor;
-        private System.Windows.Forms.TextBox txtSubTotal;
-        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox gBAdditionalCosts;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox txtPart3;
         private System.Windows.Forms.TextBox txtPartCost3;
@@ -2186,6 +2191,13 @@
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox cbInProgress;
         private System.Windows.Forms.CheckBox cbReady;
+        private System.Windows.Forms.GroupBox gBTotalCosts;
+        private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.TextBox txtTax;
+        private System.Windows.Forms.TextBox txtLabor;
+        private System.Windows.Forms.TextBox txtSubTotal;
+        private System.Windows.Forms.CheckBox cBPowerCord;
+        private System.Windows.Forms.TextBox txtOtherAccess;
     }
 }
 
