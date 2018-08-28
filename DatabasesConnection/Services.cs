@@ -100,6 +100,29 @@ namespace DatabasesConnection
         private String status;
         private int customerId;
 
+        //here we define all the input boxes related to services table
+        private string[] names = new string[]
+        {
+            "dtETAComp",
+            "dtDateComp",
+            "dtDelivered",
+            "txtBrandModel",
+            "cBPowerCord",
+            "txtOtherAccess",
+            "txtDescription",
+            "txtWorkPerformed",
+            "txtPart1",
+            "txtPart2",
+            "txtPart3",
+            "txtPartCost1",
+            "txtPartCost2",
+            "txtPartCost3",
+            "txtLabor",
+            "txtSubTotal",
+            "txtTax",
+            "txtTotal",
+        };
+
         /**************************
         * 
         ***************************/
@@ -392,5 +415,9 @@ namespace DatabasesConnection
             set { customerId = value; }
         }
 
+        public string[] getNames()
+        {
+            return names;
+        }
     }
 }

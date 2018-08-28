@@ -7,12 +7,23 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Collections;
 using System.Globalization;
+using System.Windows.Forms;
 
 namespace DatabasesConnection
 {
     class DatabaseManager
     {
         private SQLiteConnection dbh1;
+
+        public DatabaseManager()
+        {
+           
+        }
+
+        public DatabaseManager(SQLiteConnection dbh)
+        {
+            setDbh(dbh);
+        }
 
         public SQLiteConnection createDatabase(String database_name)
         {
@@ -78,6 +89,24 @@ namespace DatabasesConnection
             dbElements["counter"] = serviceStartId;
             doSQL(dbh, dbElements, tblName);
         }
+
+        public int getNextAvailableServiceId( SQLiteConnection dbh )
+        {
+            //TODO combine with existing code
+            int newId = 0;
+
+            String sql = "SELECT counter FROM ids WHERE table_name = 'service' ";
+            SQLiteCommand command = new SQLiteCommand(sql, dbh);
+            Console.WriteLine("getId +++++++++++++ ");
+            Console.WriteLine(sql);
+
+            SQLiteDataReader reader = command.ExecuteReader();
+
+            newId = Convert.ToInt16(reader["counter"]);
+
+            return ++newId;
+        }
+
         public int getId(String tblName, SQLiteConnection dbh)
         {
             int newId = 0;
@@ -168,6 +197,46 @@ namespace DatabasesConnection
             }
         }
 
+        /*
+        * 
+        * 
+        * Update single column usind]g single where clause value
+        */
+        public void doUpdateSql( Hashtable dbElements, String tblName, String colSetName, string whereClause )
+        {
+            //UPDATE tableNAME SET value = value WHERE name = name
+
+            string updateQuery = "";
+            foreach (DictionaryEntry elem in dbElements)
+            {
+                Console.WriteLine("Key = {0}, Value = {1}", elem.Key, elem.Value);
+                
+                updateQuery = "UPDATE " + tblName +
+                    " SET " + colSetName + " = '" + elem.Value + "'" +
+                    " WHERE " + whereClause + " = '" + elem.Key + "'"; 
+                
+                /*
+                updateQuery = "INSERT INTO " + tblName + "( name, value ) " +
+                "values ( '" + elem.Key + "' , '" + elem.Value + "' )"; */
+
+                // DELETE FROM settings WHERE id > 10 
+                Console.WriteLine(updateQuery);
+
+                SQLiteCommand command = new SQLiteCommand(updateQuery, this.dbh1);
+
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Exception occured: {0}", e);
+                    //return 0;
+                    //throw;
+                }
+            }
+        }
+
         private void createCustomerTable(SQLiteConnection dbh)
         {
 
@@ -251,6 +320,18 @@ namespace DatabasesConnection
 
             command.ExecuteNonQuery();
         }
+        private void createImagesTable(SQLiteConnection dbh)
+        {
+
+            string sql = "CREATE TABLE images (" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "image blob, " +
+                "type TEXT ) " ;
+
+            SQLiteCommand command = new SQLiteCommand(sql, dbh);
+
+            command.ExecuteNonQuery();
+        }
         //TODO: test and activate
         private void createSettingsTable(SQLiteConnection dbh)
         {
@@ -263,7 +344,7 @@ namespace DatabasesConnection
 
             command.ExecuteNonQuery();
         }
-        // TODO test and activate
+        // TODO test and activate, call array names using configurable class 
         public void initializeTableSettings(SQLiteConnection dbh)
         {
             // create two arrays of name/values for the initialization of the settigs
@@ -271,21 +352,39 @@ namespace DatabasesConnection
             {   "txtStandbyWarning",
                 "txtStandbyCritical",
                 "txtInProgressWarning",
-                "txtInProgressWarning",
+                "txtInProgressCritical",
                 "txtReadyWarning",
-                "txtReadyWarning",
+                "txtReadyCritical",
                 "cbReady",
                 "cbInProgress",
                 "cbStandby",
-                "cbDisableAllThresholds"
+                "cbDisableAllThresholds",
+                "txtInvoiceTitle",
+                "rtbCompanyHeader",
+                "rTBCompanyAddr1",
+                "rTBCompanyAddr2",
+                "rTBCompanyPhone",
+                "rTBCompanyEmail",
+                "rTBCompanyWebsite",
+                "cBCompanyHeaderItalic",
+                "cBCompanyHeaderBold",
+                "rtbDisclaimerTitle",
+                "rtbDisclaimerText",
+                "cBDisclaimerHeaderItalic",
+                "cBDisclaimerHeaderBold"
             };
 
             string wng = Constants.WARNING;
             string ctl = Constants.CRITICAL;
+            string empty = "";
+            string uncheck = "false";
+
             string[] values = new string[]
             {
                 wng, ctl, wng, ctl, wng, ctl,
-                Constants.ENABLED, Constants.ENABLED, Constants.ENABLED, Constants.DISABLED
+                Constants.ENABLED, Constants.ENABLED, Constants.ENABLED, Constants.DISABLED,
+                empty, empty, empty, empty, empty, empty, empty,
+                uncheck, uncheck, empty, empty, uncheck, uncheck
             };
 
             for ( int i=0; i < names.Length; i++ )
@@ -360,16 +459,34 @@ namespace DatabasesConnection
             return Guid.NewGuid().ToString("N");
         }
 
-        public void readSettingsTable()
+        public DataTable readSettingsTable()
         {
 
             string columns = "*";
             string from = "settings";
 
-            SQLiteDataReader reader = selectStatement(columns, from, null);
-        }
+            DataSet data = selectStatement(columns, from, null);
 
-        public SQLiteDataReader selectStatement(String columns, String from, String where)
+            DataTable dTable = data.Tables["settings"];
+            return dTable;
+
+
+            /*
+            Dictionary<string, object> dict = new Dictionary<string, object>();
+
+            dict = Enumerable.Range(0, reader.FieldCount)
+                .ToDictionary(reader.GetName, reader.GetValue);
+
+            //Console.WriteLine("Exception occured: {0}", Range);
+            foreach (KeyValuePair<string, object> item in dict)
+            {
+                Console.WriteLine("Key: {0}, Value: {1}", item.Key, item.Value);
+            } */
+
+
+        }
+        //TODO improve with sql injection protection
+        public DataSet selectStatement(String columns, String from, String where)
         {
             String sql = "SELECT " + columns + " FROM " + from;
 
@@ -379,11 +496,42 @@ namespace DatabasesConnection
             }
             
 
-            SQLiteCommand command = new SQLiteCommand(sql, dbh1);
+            //SQLiteCommand command = new SQLiteCommand(sql, dbh1);
 
-            SQLiteDataReader reader = command.ExecuteReader();
+            var dataAdapter = new SQLiteDataAdapter(sql, dbh1);
+            var commandBuilder = new SQLiteCommandBuilder(dataAdapter);
+            var ds = new DataSet();
 
-            return reader;
+            dataAdapter.Fill(ds, from);
+
+            //SQLiteDataReader reader = command.ExecuteReader();
+            //Console.WriteLine("====================", reader["txtStandbyWarning"].ToString());
+            return ds;
+        }
+
+        public SQLiteDataReader searchForOrder(SQLiteConnection dbh, string valueToSearch )
+        {
+            try
+            {
+                string searchFor = valueToSearch;
+
+                String sql = "SELECT * FROM service S inner join customers C ON C.id = S.customerId WHERE ( S.id = " 
+                    + valueToSearch + " OR C.telephone =  '" + valueToSearch + "' )";
+                Console.WriteLine(sql);
+                SQLiteCommand command = new SQLiteCommand(sql, dbh);
+
+                SQLiteDataReader reader = command.ExecuteReader();
+
+                return reader;
+
+            }
+            catch ( Exception ex )
+            {
+                Console.WriteLine("Error in sql");
+                Console.WriteLine( ex.ToString() );
+                MessageBox.Show("Error occurred.");
+                return null;
+            }
         }
     }
 }

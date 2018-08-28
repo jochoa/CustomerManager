@@ -19,6 +19,17 @@ namespace DatabasesConnection
         private String footprint;
         private int newId;
 
+        //here we define all the input boxes related to customer table
+        private string[] names = new string[]
+        {
+            "txtFirstName",
+            "txtLastName",
+            "txtAddress",
+            "txtPhone",
+            "txtLocation",
+            "txtEmail"
+        };
+
         public Customer()
         {
             System.Console.WriteLine("<<<<<<<<<<<<<<<<<<<<< Customer class >>>>>>>>>>>>>>>>>>>>");
@@ -123,5 +134,10 @@ namespace DatabasesConnection
             set{email = value;}
         }
         // GET/SETs end *************************************
+        public string[] getNames()
+        {
+            return names;
+        }
+
     }
 }

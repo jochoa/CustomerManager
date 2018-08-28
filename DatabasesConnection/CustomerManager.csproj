@@ -58,6 +58,7 @@
     <Compile Include="Customer.cs" />
     <Compile Include="DatabaseManager.cs" />
     <Compile Include="DBConn.cs" />
+    <Compile Include="Mail.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>

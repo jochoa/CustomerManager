@@ -29,5 +29,9 @@ namespace DatabasesConnection
         public const int TAB_DATABASE               = 2;
         public const int TAB_CONFIGURATION          = 3;
 
+        //
+        public const int COMPANY_ADDRESS_MAX_LINES  = 4;
+        public const int COMPANY_ADDRESS_MAX_CHARS  = 40;
+        public const int DISCLAIMER_MAX_LINES       = 10;
     }
 }
