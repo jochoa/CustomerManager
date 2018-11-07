@@ -23,7 +23,7 @@ namespace DatabasesConnection
 
         public DBConn()
         {     
-           
+           //empty constructor
         }
 
         public bool databaseExist(String db_name)
