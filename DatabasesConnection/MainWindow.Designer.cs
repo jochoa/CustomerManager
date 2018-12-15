@@ -33,9 +33,6 @@
             this.exitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.listViewReady = new System.Windows.Forms.ListView();
             this.listViewProgress = new System.Windows.Forms.ListView();
             this.listViewStandby = new System.Windows.Forms.ListView();
@@ -44,17 +41,7 @@
             this.btnCompleted = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.lblStandbyCountVar = new System.Windows.Forms.Label();
-            this.lblInprogressCountVar = new System.Windows.Forms.Label();
-            this.lblReadyCountVar = new System.Windows.Forms.Label();
-            this.lblStandbyCount = new System.Windows.Forms.Label();
-            this.lblInProgressCount = new System.Windows.Forms.Label();
-            this.lblReadyCount = new System.Windows.Forms.Label();
-            this.pBReady = new System.Windows.Forms.PictureBox();
-            this.pBInProgress = new System.Windows.Forms.PictureBox();
             this.pBStandby = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnDownToInProcess = new System.Windows.Forms.Button();
             this.btnCancel1 = new System.Windows.Forms.Button();
             this.btnUpToReady = new System.Windows.Forms.Button();
@@ -63,8 +50,22 @@
             this.btnDownToStandingBy = new System.Windows.Forms.Button();
             this.btnCancel3 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pBReady = new System.Windows.Forms.PictureBox();
+            this.lblReadyCountVar = new System.Windows.Forms.Label();
+            this.lblReadyCount = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblInProgressCount = new System.Windows.Forms.Label();
+            this.pBInProgress = new System.Windows.Forms.PictureBox();
+            this.lblInprogressCountVar = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lblStandbyCount = new System.Windows.Forms.Label();
+            this.lblStandbyCountVar = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.rtbCompanyText = new System.Windows.Forms.RichTextBox();
+            this.lblCompanyWebsite = new System.Windows.Forms.Label();
+            this.lblCompanyEmail = new System.Windows.Forms.Label();
+            this.lblCompanyPhone = new System.Windows.Forms.Label();
+            this.lblCompanyName = new System.Windows.Forms.Label();
             this.lblCompanyAddress = new System.Windows.Forms.Label();
             this.lblCompanyMoto = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
@@ -78,9 +79,6 @@
             this.label31 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
@@ -130,11 +128,14 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.gBTotalCosts = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.txtTax = new System.Windows.Forms.TextBox();
             this.txtLabor = new System.Windows.Forms.TextBox();
             this.txtSubTotal = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.button7 = new System.Windows.Forms.Button();
@@ -158,6 +159,7 @@
             this.lvDatabase = new System.Windows.Forms.ListView();
             this.btnPrint = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.gBQueues = new System.Windows.Forms.GroupBox();
             this.btnApplyQueuesThreshold = new System.Windows.Forms.Button();
             this.cbDisableAllThresholds = new System.Windows.Forms.CheckBox();
@@ -176,7 +178,7 @@
             this.gBInterface = new System.Windows.Forms.GroupBox();
             this.btnApplyInterface = new System.Windows.Forms.Button();
             this.txtTaxRate = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cBCurrency = new System.Windows.Forms.ComboBox();
             this.label41 = new System.Windows.Forms.Label();
             this.cBLanguage = new System.Windows.Forms.ComboBox();
             this.button14 = new System.Windows.Forms.Button();
@@ -216,6 +218,7 @@
             this.txtInvoiceTitle = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSendEmailTest = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
@@ -225,11 +228,13 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBReady)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBInProgress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBStandby)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBReady)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBInProgress)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.gBAdditionalCosts.SuspendLayout();
             this.gBCondition.SuspendLayout();
@@ -250,6 +255,7 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -279,45 +285,6 @@
             this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
             this.helpToolStripMenuItem1.Size = new System.Drawing.Size(44, 22);
             this.helpToolStripMenuItem1.Text = "Help";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(12, 176);
-            this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 17);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Ready for pick up/delivery";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(12, 375);
-            this.label2.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 17);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "In Progress";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Font = new System.Drawing.Font("Arial Narrow", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(12, 572);
-            this.label3.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 17);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Standby";
             // 
             // listViewReady
             // 
@@ -368,14 +335,14 @@
             // btnCompleted
             // 
             this.btnCompleted.AutoSize = true;
-            this.btnCompleted.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnCompleted.BackColor = System.Drawing.Color.Transparent;
             this.btnCompleted.BackgroundImage = global::DatabasesConnection.Properties.Resources.ready;
             this.btnCompleted.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnCompleted.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnCompleted.FlatAppearance.BorderSize = 4;
-            this.btnCompleted.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnCompleted.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
-            this.btnCompleted.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCompleted.FlatAppearance.BorderSize = 0;
+            this.btnCompleted.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnCompleted.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.btnCompleted.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCompleted.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCompleted.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnCompleted.Location = new System.Drawing.Point(833, 196);
@@ -389,6 +356,9 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage3);
@@ -396,7 +366,7 @@
             this.tabControl1.Location = new System.Drawing.Point(-5, -2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1080, 800);
+            this.tabControl1.Size = new System.Drawing.Size(1114, 806);
             this.tabControl1.TabIndex = 25;
             this.tabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl1_Selecting);
             // 
@@ -404,23 +374,10 @@
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.tabPage2.Controls.Add(this.lblStandbyCountVar);
-            this.tabPage2.Controls.Add(this.lblInprogressCountVar);
-            this.tabPage2.Controls.Add(this.lblReadyCountVar);
-            this.tabPage2.Controls.Add(this.lblStandbyCount);
-            this.tabPage2.Controls.Add(this.lblInProgressCount);
-            this.tabPage2.Controls.Add(this.lblReadyCount);
-            this.tabPage2.Controls.Add(this.pBReady);
-            this.tabPage2.Controls.Add(this.pBInProgress);
             this.tabPage2.Controls.Add(this.pBStandby);
-            this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.listViewStandby);
-            this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.listViewProgress);
-            this.tabPage2.Controls.Add(this.pictureBox2);
-            this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.btnDownToInProcess);
             this.tabPage2.Controls.Add(this.btnCompleted);
             this.tabPage2.Controls.Add(this.btnCancel1);
@@ -431,103 +388,17 @@
             this.tabPage2.Controls.Add(this.btnDownToStandingBy);
             this.tabPage2.Controls.Add(this.btnCancel3);
             this.tabPage2.Controls.Add(this.pictureBox1);
+            this.tabPage2.Controls.Add(this.groupBox2);
+            this.tabPage2.Controls.Add(this.groupBox3);
+            this.tabPage2.Controls.Add(this.groupBox4);
             this.tabPage2.Cursor = System.Windows.Forms.Cursors.Default;
             this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1072, 774);
+            this.tabPage2.Size = new System.Drawing.Size(1106, 780);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Queues";
-            // 
-            // lblStandbyCountVar
-            // 
-            this.lblStandbyCountVar.AutoSize = true;
-            this.lblStandbyCountVar.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblStandbyCountVar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStandbyCountVar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblStandbyCountVar.Location = new System.Drawing.Point(980, 705);
-            this.lblStandbyCountVar.Name = "lblStandbyCountVar";
-            this.lblStandbyCountVar.Size = new System.Drawing.Size(17, 18);
-            this.lblStandbyCountVar.TabIndex = 34;
-            this.lblStandbyCountVar.Text = "0";
-            // 
-            // lblInprogressCountVar
-            // 
-            this.lblInprogressCountVar.AutoSize = true;
-            this.lblInprogressCountVar.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblInprogressCountVar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInprogressCountVar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblInprogressCountVar.Location = new System.Drawing.Point(980, 507);
-            this.lblInprogressCountVar.Name = "lblInprogressCountVar";
-            this.lblInprogressCountVar.Size = new System.Drawing.Size(17, 18);
-            this.lblInprogressCountVar.TabIndex = 33;
-            this.lblInprogressCountVar.Text = "0";
-            // 
-            // lblReadyCountVar
-            // 
-            this.lblReadyCountVar.AutoSize = true;
-            this.lblReadyCountVar.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblReadyCountVar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReadyCountVar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblReadyCountVar.Location = new System.Drawing.Point(980, 306);
-            this.lblReadyCountVar.Name = "lblReadyCountVar";
-            this.lblReadyCountVar.Size = new System.Drawing.Size(17, 18);
-            this.lblReadyCountVar.TabIndex = 32;
-            this.lblReadyCountVar.Text = "0";
-            // 
-            // lblStandbyCount
-            // 
-            this.lblStandbyCount.AutoSize = true;
-            this.lblStandbyCount.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblStandbyCount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblStandbyCount.Location = new System.Drawing.Point(927, 707);
-            this.lblStandbyCount.Name = "lblStandbyCount";
-            this.lblStandbyCount.Size = new System.Drawing.Size(47, 17);
-            this.lblStandbyCount.TabIndex = 31;
-            this.lblStandbyCount.Text = "count:";
-            // 
-            // lblInProgressCount
-            // 
-            this.lblInProgressCount.AutoSize = true;
-            this.lblInProgressCount.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblInProgressCount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblInProgressCount.Location = new System.Drawing.Point(927, 507);
-            this.lblInProgressCount.Name = "lblInProgressCount";
-            this.lblInProgressCount.Size = new System.Drawing.Size(47, 17);
-            this.lblInProgressCount.TabIndex = 30;
-            this.lblInProgressCount.Text = "count:";
-            // 
-            // lblReadyCount
-            // 
-            this.lblReadyCount.AutoSize = true;
-            this.lblReadyCount.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblReadyCount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblReadyCount.Location = new System.Drawing.Point(927, 308);
-            this.lblReadyCount.Name = "lblReadyCount";
-            this.lblReadyCount.Size = new System.Drawing.Size(47, 17);
-            this.lblReadyCount.TabIndex = 29;
-            this.lblReadyCount.Text = "count:";
-            // 
-            // pBReady
-            // 
-            this.pBReady.Image = global::DatabasesConnection.Properties.Resources.green_btn;
-            this.pBReady.Location = new System.Drawing.Point(940, 225);
-            this.pBReady.Name = "pBReady";
-            this.pBReady.Size = new System.Drawing.Size(77, 72);
-            this.pBReady.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBReady.TabIndex = 28;
-            this.pBReady.TabStop = false;
-            // 
-            // pBInProgress
-            // 
-            this.pBInProgress.Image = global::DatabasesConnection.Properties.Resources.green_btn;
-            this.pBInProgress.Location = new System.Drawing.Point(940, 424);
-            this.pBInProgress.Name = "pBInProgress";
-            this.pBInProgress.Size = new System.Drawing.Size(77, 72);
-            this.pBInProgress.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBInProgress.TabIndex = 27;
-            this.pBInProgress.TabStop = false;
             // 
             // pBStandby
             // 
@@ -539,35 +410,15 @@
             this.pBStandby.TabIndex = 26;
             this.pBStandby.TabStop = false;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(906, 4);
-            this.label5.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 16);
-            this.label5.TabIndex = 25;
-            this.label5.Text = "Powered by";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::DatabasesConnection.Properties.Resources.element_noback2;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(899, 23);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(151, 73);
-            this.pictureBox2.TabIndex = 24;
-            this.pictureBox2.TabStop = false;
-            // 
             // btnDownToInProcess
             // 
-            this.btnDownToInProcess.BackColor = System.Drawing.Color.Orange;
+            this.btnDownToInProcess.BackColor = System.Drawing.Color.Transparent;
             this.btnDownToInProcess.BackgroundImage = global::DatabasesConnection.Properties.Resources.arrow_down;
             this.btnDownToInProcess.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnDownToInProcess.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDownToInProcess.FlatAppearance.BorderSize = 0;
+            this.btnDownToInProcess.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnDownToInProcess.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.btnDownToInProcess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDownToInProcess.Location = new System.Drawing.Point(833, 308);
             this.btnDownToInProcess.Margin = new System.Windows.Forms.Padding(1);
             this.btnDownToInProcess.Name = "btnDownToInProcess";
@@ -578,10 +429,13 @@
             // 
             // btnCancel1
             // 
-            this.btnCancel1.BackColor = System.Drawing.Color.Crimson;
+            this.btnCancel1.BackColor = System.Drawing.Color.Transparent;
             this.btnCancel1.BackgroundImage = global::DatabasesConnection.Properties.Resources.remove;
             this.btnCancel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCancel1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancel1.FlatAppearance.BorderSize = 0;
+            this.btnCancel1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnCancel1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.btnCancel1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel1.Location = new System.Drawing.Point(833, 262);
             this.btnCancel1.Margin = new System.Windows.Forms.Padding(1);
             this.btnCancel1.Name = "btnCancel1";
@@ -592,10 +446,13 @@
             // 
             // btnUpToReady
             // 
-            this.btnUpToReady.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnUpToReady.BackColor = System.Drawing.Color.Transparent;
             this.btnUpToReady.BackgroundImage = global::DatabasesConnection.Properties.Resources.arrow_up;
             this.btnUpToReady.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnUpToReady.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUpToReady.FlatAppearance.BorderSize = 0;
+            this.btnUpToReady.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnUpToReady.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnUpToReady.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpToReady.Location = new System.Drawing.Point(833, 395);
             this.btnUpToReady.Margin = new System.Windows.Forms.Padding(1);
             this.btnUpToReady.Name = "btnUpToReady";
@@ -606,10 +463,13 @@
             // 
             // btnUpToInProgress
             // 
-            this.btnUpToInProgress.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnUpToInProgress.BackColor = System.Drawing.Color.Transparent;
             this.btnUpToInProgress.BackgroundImage = global::DatabasesConnection.Properties.Resources.arrow_up;
             this.btnUpToInProgress.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnUpToInProgress.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUpToInProgress.FlatAppearance.BorderSize = 0;
+            this.btnUpToInProgress.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnUpToInProgress.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnUpToInProgress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpToInProgress.Location = new System.Drawing.Point(833, 592);
             this.btnUpToInProgress.Margin = new System.Windows.Forms.Padding(1);
             this.btnUpToInProgress.Name = "btnUpToInProgress";
@@ -620,10 +480,13 @@
             // 
             // btnCancel2
             // 
-            this.btnCancel2.BackColor = System.Drawing.Color.Crimson;
+            this.btnCancel2.BackColor = System.Drawing.Color.Transparent;
             this.btnCancel2.BackgroundImage = global::DatabasesConnection.Properties.Resources.remove;
             this.btnCancel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCancel2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancel2.FlatAppearance.BorderSize = 0;
+            this.btnCancel2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnCancel2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.btnCancel2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel2.Location = new System.Drawing.Point(833, 461);
             this.btnCancel2.Margin = new System.Windows.Forms.Padding(1);
             this.btnCancel2.Name = "btnCancel2";
@@ -634,10 +497,13 @@
             // 
             // btnDownToStandingBy
             // 
-            this.btnDownToStandingBy.BackColor = System.Drawing.Color.Orange;
+            this.btnDownToStandingBy.BackColor = System.Drawing.Color.Transparent;
             this.btnDownToStandingBy.BackgroundImage = global::DatabasesConnection.Properties.Resources.arrow_down;
             this.btnDownToStandingBy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnDownToStandingBy.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDownToStandingBy.FlatAppearance.BorderSize = 0;
+            this.btnDownToStandingBy.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnDownToStandingBy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.btnDownToStandingBy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDownToStandingBy.Location = new System.Drawing.Point(833, 507);
             this.btnDownToStandingBy.Margin = new System.Windows.Forms.Padding(1);
             this.btnDownToStandingBy.Name = "btnDownToStandingBy";
@@ -648,10 +514,13 @@
             // 
             // btnCancel3
             // 
-            this.btnCancel3.BackColor = System.Drawing.Color.Crimson;
+            this.btnCancel3.BackColor = System.Drawing.Color.Transparent;
             this.btnCancel3.BackgroundImage = global::DatabasesConnection.Properties.Resources.remove;
             this.btnCancel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCancel3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancel3.FlatAppearance.BorderSize = 0;
+            this.btnCancel3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnCancel3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.btnCancel3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel3.Location = new System.Drawing.Point(833, 659);
             this.btnCancel3.Margin = new System.Windows.Forms.Padding(1);
             this.btnCancel3.Name = "btnCancel3";
@@ -666,14 +535,144 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(15, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(801, 156);
+            this.pictureBox1.Size = new System.Drawing.Size(1081, 156);
             this.pictureBox1.TabIndex = 23;
             this.pictureBox1.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.pBReady);
+            this.groupBox2.Controls.Add(this.lblReadyCountVar);
+            this.groupBox2.Controls.Add(this.lblReadyCount);
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
+            this.groupBox2.Location = new System.Drawing.Point(13, 178);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1083, 194);
+            this.groupBox2.TabIndex = 35;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Ready";
+            // 
+            // pBReady
+            // 
+            this.pBReady.Image = global::DatabasesConnection.Properties.Resources.green_btn;
+            this.pBReady.Location = new System.Drawing.Point(927, 47);
+            this.pBReady.Name = "pBReady";
+            this.pBReady.Size = new System.Drawing.Size(77, 72);
+            this.pBReady.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBReady.TabIndex = 28;
+            this.pBReady.TabStop = false;
+            // 
+            // lblReadyCountVar
+            // 
+            this.lblReadyCountVar.AutoSize = true;
+            this.lblReadyCountVar.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblReadyCountVar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReadyCountVar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblReadyCountVar.Location = new System.Drawing.Point(987, 129);
+            this.lblReadyCountVar.Name = "lblReadyCountVar";
+            this.lblReadyCountVar.Size = new System.Drawing.Size(17, 18);
+            this.lblReadyCountVar.TabIndex = 32;
+            this.lblReadyCountVar.Text = "0";
+            // 
+            // lblReadyCount
+            // 
+            this.lblReadyCount.AutoSize = true;
+            this.lblReadyCount.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblReadyCount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblReadyCount.Location = new System.Drawing.Point(924, 129);
+            this.lblReadyCount.Name = "lblReadyCount";
+            this.lblReadyCount.Size = new System.Drawing.Size(47, 17);
+            this.lblReadyCount.TabIndex = 29;
+            this.lblReadyCount.Text = "count:";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.lblInProgressCount);
+            this.groupBox3.Controls.Add(this.pBInProgress);
+            this.groupBox3.Controls.Add(this.lblInprogressCountVar);
+            this.groupBox3.ForeColor = System.Drawing.Color.White;
+            this.groupBox3.Location = new System.Drawing.Point(13, 378);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(1083, 191);
+            this.groupBox3.TabIndex = 36;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "In Progress";
+            // 
+            // lblInProgressCount
+            // 
+            this.lblInProgressCount.AutoSize = true;
+            this.lblInProgressCount.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblInProgressCount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblInProgressCount.Location = new System.Drawing.Point(924, 129);
+            this.lblInProgressCount.Name = "lblInProgressCount";
+            this.lblInProgressCount.Size = new System.Drawing.Size(47, 17);
+            this.lblInProgressCount.TabIndex = 30;
+            this.lblInProgressCount.Text = "count:";
+            // 
+            // pBInProgress
+            // 
+            this.pBInProgress.Image = global::DatabasesConnection.Properties.Resources.green_btn;
+            this.pBInProgress.Location = new System.Drawing.Point(927, 46);
+            this.pBInProgress.Name = "pBInProgress";
+            this.pBInProgress.Size = new System.Drawing.Size(77, 72);
+            this.pBInProgress.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBInProgress.TabIndex = 27;
+            this.pBInProgress.TabStop = false;
+            // 
+            // lblInprogressCountVar
+            // 
+            this.lblInprogressCountVar.AutoSize = true;
+            this.lblInprogressCountVar.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblInprogressCountVar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInprogressCountVar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblInprogressCountVar.Location = new System.Drawing.Point(987, 129);
+            this.lblInprogressCountVar.Name = "lblInprogressCountVar";
+            this.lblInprogressCountVar.Size = new System.Drawing.Size(17, 18);
+            this.lblInprogressCountVar.TabIndex = 33;
+            this.lblInprogressCountVar.Text = "0";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.lblStandbyCount);
+            this.groupBox4.Controls.Add(this.lblStandbyCountVar);
+            this.groupBox4.ForeColor = System.Drawing.Color.White;
+            this.groupBox4.Location = new System.Drawing.Point(13, 575);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(1083, 191);
+            this.groupBox4.TabIndex = 37;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Standby";
+            // 
+            // lblStandbyCount
+            // 
+            this.lblStandbyCount.AutoSize = true;
+            this.lblStandbyCount.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblStandbyCount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblStandbyCount.Location = new System.Drawing.Point(924, 130);
+            this.lblStandbyCount.Name = "lblStandbyCount";
+            this.lblStandbyCount.Size = new System.Drawing.Size(47, 17);
+            this.lblStandbyCount.TabIndex = 31;
+            this.lblStandbyCount.Text = "count:";
+            // 
+            // lblStandbyCountVar
+            // 
+            this.lblStandbyCountVar.AutoSize = true;
+            this.lblStandbyCountVar.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblStandbyCountVar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStandbyCountVar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblStandbyCountVar.Location = new System.Drawing.Point(987, 130);
+            this.lblStandbyCountVar.Name = "lblStandbyCountVar";
+            this.lblStandbyCountVar.Size = new System.Drawing.Size(17, 18);
+            this.lblStandbyCountVar.TabIndex = 34;
+            this.lblStandbyCountVar.Text = "0";
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tabPage1.Controls.Add(this.rtbCompanyText);
+            this.tabPage1.Controls.Add(this.lblCompanyWebsite);
+            this.tabPage1.Controls.Add(this.lblCompanyEmail);
+            this.tabPage1.Controls.Add(this.lblCompanyPhone);
+            this.tabPage1.Controls.Add(this.lblCompanyName);
             this.tabPage1.Controls.Add(this.lblCompanyAddress);
             this.tabPage1.Controls.Add(this.lblCompanyMoto);
             this.tabPage1.Controls.Add(this.btnSave);
@@ -687,8 +686,6 @@
             this.tabPage1.Controls.Add(this.label31);
             this.tabPage1.Controls.Add(this.button6);
             this.tabPage1.Controls.Add(this.btnNew);
-            this.tabPage1.Controls.Add(this.label30);
-            this.tabPage1.Controls.Add(this.label28);
             this.tabPage1.Controls.Add(this.label26);
             this.tabPage1.Controls.Add(this.btnClear);
             this.tabPage1.Controls.Add(this.label23);
@@ -711,26 +708,57 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1072, 774);
+            this.tabPage1.Size = new System.Drawing.Size(1106, 780);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Order Information";
             // 
-            // rtbCompanyText
+            // lblCompanyWebsite
             // 
-            this.rtbCompanyText.AutoWordSelection = true;
-            this.rtbCompanyText.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.rtbCompanyText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbCompanyText.Location = new System.Drawing.Point(110, 39);
-            this.rtbCompanyText.Name = "rtbCompanyText";
-            this.rtbCompanyText.Size = new System.Drawing.Size(390, 69);
-            this.rtbCompanyText.TabIndex = 60;
-            this.rtbCompanyText.Text = "";
+            this.lblCompanyWebsite.AutoSize = true;
+            this.lblCompanyWebsite.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompanyWebsite.Location = new System.Drawing.Point(16, 90);
+            this.lblCompanyWebsite.Name = "lblCompanyWebsite";
+            this.lblCompanyWebsite.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblCompanyWebsite.Size = new System.Drawing.Size(90, 13);
+            this.lblCompanyWebsite.TabIndex = 65;
+            this.lblCompanyWebsite.Text = "Company website";
+            // 
+            // lblCompanyEmail
+            // 
+            this.lblCompanyEmail.AutoSize = true;
+            this.lblCompanyEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompanyEmail.Location = new System.Drawing.Point(16, 77);
+            this.lblCompanyEmail.Name = "lblCompanyEmail";
+            this.lblCompanyEmail.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblCompanyEmail.Size = new System.Drawing.Size(78, 13);
+            this.lblCompanyEmail.TabIndex = 64;
+            this.lblCompanyEmail.Text = "Company email";
+            // 
+            // lblCompanyPhone
+            // 
+            this.lblCompanyPhone.AutoSize = true;
+            this.lblCompanyPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompanyPhone.Location = new System.Drawing.Point(16, 64);
+            this.lblCompanyPhone.Name = "lblCompanyPhone";
+            this.lblCompanyPhone.Size = new System.Drawing.Size(123, 13);
+            this.lblCompanyPhone.TabIndex = 62;
+            this.lblCompanyPhone.Text = "Company Phone number";
+            // 
+            // lblCompanyName
+            // 
+            this.lblCompanyName.AutoSize = true;
+            this.lblCompanyName.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompanyName.Location = new System.Drawing.Point(14, 3);
+            this.lblCompanyName.Name = "lblCompanyName";
+            this.lblCompanyName.Size = new System.Drawing.Size(124, 26);
+            this.lblCompanyName.TabIndex = 61;
+            this.lblCompanyName.Text = "Repair Shop";
             // 
             // lblCompanyAddress
             // 
             this.lblCompanyAddress.AutoSize = true;
             this.lblCompanyAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompanyAddress.Location = new System.Drawing.Point(13, 36);
+            this.lblCompanyAddress.Location = new System.Drawing.Point(15, 51);
             this.lblCompanyAddress.Name = "lblCompanyAddress";
             this.lblCompanyAddress.Size = new System.Drawing.Size(92, 13);
             this.lblCompanyAddress.TabIndex = 59;
@@ -740,7 +768,7 @@
             // 
             this.lblCompanyMoto.AutoSize = true;
             this.lblCompanyMoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompanyMoto.Location = new System.Drawing.Point(12, 23);
+            this.lblCompanyMoto.Location = new System.Drawing.Point(15, 29);
             this.lblCompanyMoto.Name = "lblCompanyMoto";
             this.lblCompanyMoto.Size = new System.Drawing.Size(171, 13);
             this.lblCompanyMoto.TabIndex = 58;
@@ -880,39 +908,6 @@
             this.btnNew.Text = "New";
             this.btnNew.UseVisualStyleBackColor = false;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.BackColor = System.Drawing.Color.Gray;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(873, 657);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(40, 17);
-            this.label30.TabIndex = 50;
-            this.label30.Text = "Total";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.BackColor = System.Drawing.Color.Gray;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(873, 600);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(60, 17);
-            this.label28.TabIndex = 48;
-            this.label28.Text = "Subtotal";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.BackColor = System.Drawing.Color.Gray;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(288, 26);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(45, 17);
-            this.label27.TabIndex = 25;
-            this.label27.Text = "Labor";
             // 
             // label26
             // 
@@ -1489,6 +1484,8 @@
             // 
             // gBTotalCosts
             // 
+            this.gBTotalCosts.Controls.Add(this.label13);
+            this.gBTotalCosts.Controls.Add(this.label11);
             this.gBTotalCosts.Controls.Add(this.txtTotal);
             this.gBTotalCosts.Controls.Add(this.txtTax);
             this.gBTotalCosts.Controls.Add(this.txtLabor);
@@ -1504,6 +1501,28 @@
             this.gBTotalCosts.TabIndex = 57;
             this.gBTotalCosts.TabStop = false;
             this.gBTotalCosts.Text = "Total Costs";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Gray;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(288, 114);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(40, 17);
+            this.label13.TabIndex = 53;
+            this.label13.Text = "Total";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Gray;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(288, 57);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(60, 17);
+            this.label11.TabIndex = 52;
+            this.label11.Text = "Subtotal";
             // 
             // txtTotal
             // 
@@ -1562,6 +1581,17 @@
             this.label29.TabIndex = 49;
             this.label29.Text = "Tax";
             // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.BackColor = System.Drawing.Color.Gray;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(288, 26);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(45, 17);
+            this.label27.TabIndex = 25;
+            this.label27.Text = "Labor";
+            // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.SystemColors.ActiveBorder;
@@ -1575,7 +1605,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1072, 774);
+            this.tabPage3.Size = new System.Drawing.Size(1106, 780);
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "Database";
             // 
@@ -1801,16 +1831,31 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.tabPage4.Controls.Add(this.label1);
             this.tabPage4.Controls.Add(this.gBQueues);
             this.tabPage4.Controls.Add(this.gBInterface);
             this.tabPage4.Controls.Add(this.gBCompanyInfo);
             this.tabPage4.Controls.Add(this.groupBox1);
+            this.tabPage4.Controls.Add(this.pictureBox3);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1072, 774);
+            this.tabPage4.Size = new System.Drawing.Size(1106, 780);
             this.tabPage4.TabIndex = 4;
             this.tabPage4.Text = "Control Panel";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(960, 3);
+            this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 16);
+            this.label1.TabIndex = 48;
+            this.label1.Text = "Created by";
             // 
             // gBQueues
             // 
@@ -1846,6 +1891,7 @@
             this.btnApplyQueuesThreshold.TabIndex = 44;
             this.btnApplyQueuesThreshold.Text = "Apply";
             this.btnApplyQueuesThreshold.UseVisualStyleBackColor = true;
+            this.btnApplyQueuesThreshold.Click += new System.EventHandler(this.btnApplyQueuesThreshold_Click);
             // 
             // cbDisableAllThresholds
             // 
@@ -1979,7 +2025,7 @@
             // 
             this.gBInterface.Controls.Add(this.btnApplyInterface);
             this.gBInterface.Controls.Add(this.txtTaxRate);
-            this.gBInterface.Controls.Add(this.comboBox2);
+            this.gBInterface.Controls.Add(this.cBCurrency);
             this.gBInterface.Controls.Add(this.label41);
             this.gBInterface.Controls.Add(this.cBLanguage);
             this.gBInterface.Controls.Add(this.button14);
@@ -2005,6 +2051,7 @@
             this.btnApplyInterface.TabIndex = 43;
             this.btnApplyInterface.Text = "Apply";
             this.btnApplyInterface.UseVisualStyleBackColor = true;
+            this.btnApplyInterface.Click += new System.EventHandler(this.btnApplyInterface_Click);
             // 
             // txtTaxRate
             // 
@@ -2016,18 +2063,18 @@
             this.txtTaxRate.TabIndex = 11;
             this.txtTaxRate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTaxRate_KeyPress);
             // 
-            // comboBox2
+            // cBCurrency
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cBCurrency.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cBCurrency.FormattingEnabled = true;
+            this.cBCurrency.Items.AddRange(new object[] {
             "Dollar",
             "Euro"});
-            this.comboBox2.Location = new System.Drawing.Point(366, 68);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(1);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(112, 24);
-            this.comboBox2.TabIndex = 10;
+            this.cBCurrency.Location = new System.Drawing.Point(366, 68);
+            this.cBCurrency.Margin = new System.Windows.Forms.Padding(1);
+            this.cBCurrency.Name = "cBCurrency";
+            this.cBCurrency.Size = new System.Drawing.Size(112, 24);
+            this.cBCurrency.TabIndex = 10;
             // 
             // label41
             // 
@@ -2131,7 +2178,7 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.splitContainer1.Panel1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.splitContainer1.Panel1.Controls.Add(this.label54);
             this.splitContainer1.Panel1.Controls.Add(this.rTBCompanyWebsite);
             this.splitContainer1.Panel1.Controls.Add(this.label53);
@@ -2151,7 +2198,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.splitContainer1.Panel2.Controls.Add(this.label55);
             this.splitContainer1.Panel2.Controls.Add(this.rtbDisclaimerText);
             this.splitContainer1.Panel2.Controls.Add(this.label36);
@@ -2249,9 +2296,9 @@
             this.label19.Location = new System.Drawing.Point(6, 120);
             this.label19.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(263, 17);
+            this.label19.Size = new System.Drawing.Size(225, 17);
             this.label19.TabIndex = 41;
-            this.label19.Text = "Company Address line 2 (Max 60 chars )";
+            this.label19.Text = "Company Address (Max 60 chars )";
             // 
             // rTBCompanyAddr1
             // 
@@ -2271,9 +2318,9 @@
             this.label18.Location = new System.Drawing.Point(6, 72);
             this.label18.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(263, 17);
+            this.label18.Size = new System.Drawing.Size(259, 17);
             this.label18.TabIndex = 40;
-            this.label18.Text = "Company Address line 1 (Max 60 chars )";
+            this.label18.Text = "Company Title (Max 60 chars - optional)";
             // 
             // rTBCompanyAddr2
             // 
@@ -2293,9 +2340,9 @@
             this.label51.Location = new System.Drawing.Point(6, 26);
             this.label51.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(276, 17);
+            this.label51.Size = new System.Drawing.Size(210, 17);
             this.label51.TabIndex = 12;
-            this.label51.Text = "Company Address Header (Max 60 chars )";
+            this.label51.Text = "Company Name (Max 60 chars )";
             // 
             // cBCompanyHeaderItalic
             // 
@@ -2491,6 +2538,16 @@
             this.btnSendEmailTest.UseVisualStyleBackColor = true;
             this.btnSendEmailTest.Click += new System.EventHandler(this.btnSendEmailTest_Click);
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::DatabasesConnection.Properties.Resources.element_noback2;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.Location = new System.Drawing.Point(984, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(119, 73);
+            this.pictureBox3.TabIndex = 47;
+            this.pictureBox3.TabStop = false;
+            // 
             // errorProvider1
             // 
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
@@ -2529,7 +2586,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1097, 798);
+            this.ClientSize = new System.Drawing.Size(1107, 804);
             this.Controls.Add(this.tabControl1);
             this.Name = "MainWindow";
             this.Text = "Customer Service Queues Manager";
@@ -2539,11 +2596,16 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBReady)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBInProgress)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBStandby)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBReady)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBInProgress)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.gBAdditionalCosts.ResumeLayout(false);
@@ -2565,6 +2627,7 @@
             this.groupBox7.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.gBQueues.ResumeLayout(false);
             this.gBQueues.PerformLayout();
             this.gBInterface.ResumeLayout(false);
@@ -2578,6 +2641,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -2597,23 +2661,18 @@
         private System.Windows.Forms.Button btnCancel2;
         private System.Windows.Forms.Button btnDownToStandingBy;
         private System.Windows.Forms.Button btnCancel3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListView listViewReady;
         private System.Windows.Forms.ListView listViewProgress;
         private System.Windows.Forms.ListView listViewStandby;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox gBBrandModel;
         private System.Windows.Forms.GroupBox gBCustomerInfo;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -2646,9 +2705,7 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label23;
@@ -2693,7 +2750,7 @@
         private System.Windows.Forms.TextBox txtInvoiceTitle;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.ComboBox cBLanguage;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cBCurrency;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.ErrorProvider errorProvider1;
@@ -2748,7 +2805,6 @@
         private System.Windows.Forms.RichTextBox rtbDisclaimerText;
         private System.Windows.Forms.Label lblCompanyAddress;
         private System.Windows.Forms.Label lblCompanyMoto;
-        private System.Windows.Forms.RichTextBox rtbCompanyText;
         private System.Windows.Forms.ComboBox cBImageLayout;
         private System.Windows.Forms.HelpProvider helpProvider1;
         private System.Windows.Forms.ToolTip tTCompanyAddress;
@@ -2775,10 +2831,21 @@
         private System.Windows.Forms.Label lblReadyCount;
         private System.Windows.Forms.Label lblStandbyCountVar;
         private System.Windows.Forms.Label lblInprogressCountVar;
-        private System.Windows.Forms.Label lblReadyCountVar;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblReadyCountVar;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label lblCompanyName;
+        private System.Windows.Forms.Label lblCompanyPhone;
+        private System.Windows.Forms.Label lblCompanyWebsite;
+        private System.Windows.Forms.Label lblCompanyEmail;
     }
 }
 

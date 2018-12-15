@@ -177,6 +177,7 @@ namespace CustomerManager
 
             }
 
+            // Set the counter variables
             lblReadyCountVar.Text = readyCounter.ToString();
             lblInprogressCountVar.Text = inprogressCounter.ToString();
             lblStandbyCountVar.Text = standbyCounter.ToString();
@@ -199,6 +200,49 @@ namespace CustomerManager
             dataAdapter.Fill(ds1, "service");
 
             loadListView(ds1, lvDatabase);
+
+        }
+        private void loadMerchantAddress()
+        {
+            System.Console.WriteLine("Loading merchant address");
+
+            config.reload();
+
+            string[] ctrNames = config.getNames();
+
+
+            foreach (string ctr in ctrNames)
+            {
+                System.Console.WriteLine("Accessing name " + ctr);
+
+                if(ctr == "rtbCompanyHeader")
+                {
+                    // This is the company name
+                    lblCompanyName.Text = config.settings[ctr];
+                }
+                if (ctr == "rTBCompanyAddr1")
+                {
+                    // This would be the company title or moto
+                    lblCompanyMoto.Text = config.settings[ctr];
+                }
+                if (ctr == "rTBCompanyAddr2")
+                {
+                    lblCompanyAddress.Text = config.settings[ctr];
+                }
+                if (ctr == "rTBCompanyPhone")
+                {
+                    lblCompanyPhone.Text = config.settings[ctr];
+                }
+                if (ctr == "rTBCompanyEmail")
+                {
+                    lblCompanyEmail.Text = config.settings[ctr];
+                }
+                if (ctr == "rTBCompanyWebsite")
+                {
+                    lblCompanyWebsite.Text = config.settings[ctr];
+                }
+
+            }
 
         }
 
@@ -761,6 +805,11 @@ namespace CustomerManager
                 loadConfiguration();
             }
 
+            if (e.TabPageIndex == Constants.TAB_FORM_ENTRY)
+            {
+                loadMerchantAddress();
+            }
+
         }
 
         private void btnCancel1_Click(object sender, EventArgs e)
@@ -1177,6 +1226,27 @@ namespace CustomerManager
                     contextMenuStrip1.Show(Cursor.Position);
                 }
             }
+        }
+
+        private void btnApplyQueuesThreshold_Click(object sender, EventArgs e)
+        {
+            //TODO look at btnCompanyConfigApply_Click
+
+
+        }
+
+        private void btnApplyInterface_Click(object sender, EventArgs e)
+        {
+
+            string currency = cBCurrency.Text;
+            string taxRate = txtTaxRate.Text;
+
+            Hashtable updateData = new Hashtable();
+
+            updateData.Add("cBCurrency", currency);
+            updateData.Add("txtTaxRate", taxRate);
+
+            config.updateSettings(updateData);
         }
 
         /*

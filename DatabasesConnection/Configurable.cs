@@ -38,7 +38,9 @@ namespace DatabasesConnection
             "rtbDisclaimerTitle",
             "rtbDisclaimerText",
             "cBDisclaimerHeaderItalic",
-            "cBDisclaimerHeaderBold"
+            "cBDisclaimerHeaderBold",
+            "txtTaxRate",
+            "cBCurrency"
         };
 
         public Configurable(SQLiteConnection dbh)

@@ -25,7 +25,7 @@ namespace DatabasesConnection
 
         // Tab pages
         public const int TAB_QUEUES                 = 0;
-        public const int TAB_INFORMATION            = 1;
+        public const int TAB_FORM_ENTRY             = 1;
         public const int TAB_DATABASE               = 2;
         public const int TAB_CONFIGURATION          = 3;
 

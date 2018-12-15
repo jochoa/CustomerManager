@@ -200,7 +200,7 @@ namespace DatabasesConnection
         /*
         * 
         * 
-        * Update single column usind]g single where clause value
+        * Update single column using single where clause value
         */
         public void doUpdateSql( Hashtable dbElements, String tblName, String colSetName, string whereClause )
         {
@@ -347,6 +347,7 @@ namespace DatabasesConnection
         // TODO test and activate, call array names using configurable class 
         public void initializeTableSettings(SQLiteConnection dbh)
         {
+            // TODO: use a hashtable to names and values
             // create two arrays of name/values for the initialization of the settigs
             string[] names = new string[]
             {   "txtStandbyWarning",
@@ -371,7 +372,9 @@ namespace DatabasesConnection
                 "rtbDisclaimerTitle",
                 "rtbDisclaimerText",
                 "cBDisclaimerHeaderItalic",
-                "cBDisclaimerHeaderBold"
+                "cBDisclaimerHeaderBold",
+                "cBCurrency",
+                "txtTaxRate"
             };
 
             string wng = Constants.WARNING;
@@ -384,7 +387,7 @@ namespace DatabasesConnection
                 wng, ctl, wng, ctl, wng, ctl,
                 Constants.ENABLED, Constants.ENABLED, Constants.ENABLED, Constants.DISABLED,
                 empty, empty, empty, empty, empty, empty, empty,
-                uncheck, uncheck, empty, empty, uncheck, uncheck
+                uncheck, uncheck, empty, empty, uncheck, uncheck, empty, empty
             };
 
             for ( int i=0; i < names.Length; i++ )
