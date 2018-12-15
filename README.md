@@ -15,8 +15,8 @@ It is a simple but highly effective GUI program that manages, orginizes, stores 
 
 ## Screenshots
 
-![alt text](DatabasesConnection/Resources/queue_page.GIF)
-![alt text](DatabasesConnection/Resources/customer_info_page.GIF)
+![alt text](DatabasesConnection/Resources/queue_page.git)
+![alt text](DatabasesConnection/Resources/customer_info_page.gif)
 ![alt text](DatabasesConnection/Resources/database_page.PNG)
 ![alt text](DatabasesConnection/Resources/control_panel_page.PNG)
 
